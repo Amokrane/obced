@@ -1,0 +1,18 @@
+source 'http://rubygems.org'
+
+gem 'rails', '3.0.5'
+gem 'sqlite3'
+gem 'devise'
+gem 'mongrel', '1.2.0.pre2'
+gem 'jquery-rails', '>= 0.2.6'
+
+group :test, :development do
+	gem 'rspec-rails', '~>2.3'
+end
+
+group :test do
+	gem 'cucumber-rails'
+	gem 'capybara'
+	gem 'factory_girl'
+	gem 'database_cleaner'
+end

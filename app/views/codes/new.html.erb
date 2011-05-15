@@ -1,0 +1,131 @@
+<style type="text/css">
+
+	html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+
+		background: transparent;
+		border: 0px;
+		font-size: 100%;
+		margin: 0px;
+		vertical-align: baseline;
+	 }
+
+
+	#tagnames {
+		width: 660px;	
+	}
+
+	input {
+		margin: 5px 9px;
+		padding: 3px;
+	}
+
+	input, select, button {
+		border: 1px solid #999;	
+		font-family: 'Trebuchet MS';
+		font-size: 100%;
+	}
+
+	.ac_results {
+		background-color: white;
+		border: 1px solid #777;
+		overflow: hidden;
+		padding: 0px;
+		text-align: left;
+		z-index: 300;
+	}
+
+	element.style {
+		max-height: 300px;	
+		overflow: auto;
+	}
+
+	.ac_results ul {
+		list-style: none;
+		margin: 0px;
+		padding: 0px;
+		width: 100%;
+	}
+
+	.ac_results li {
+		cursor: default;
+		display: block;
+		font-family: 'Trebuchet MS';
+		line-height: 16px;
+		margin: 0px;
+		overflow: hidden;
+		padding: 2px 5px;
+	}
+
+	.ac_over {
+		background-color: #F90;
+		color: white;
+		font-family: 'Trebuchet MS';
+	}
+</style>
+
+<script type="text/javascript">
+	$(function() {
+		var element = $('li[id^="l"]');	
+		$("#l0").mouseover(function(event) {
+			$("#l0").addClass('ac_over');
+		});
+
+		$("#l0").mouseout(function(event) {
+			$("#l0").removeClass('ac_over');
+		});
+
+		$("#tagnames").keydown(function (event) {
+			$("#tag-preview").load('/tags/related_tags?current_tag=' + this.value);
+		});
+	});
+</script>
+
+<%= form_for(@code) do |f| %>
+	<%= f.label :title %> <br/>
+	<%= f.text_field :title %> <br/> <br/>
+
+	<%= f.label :content %> <br/>
+	<%= f.text_area :content %> <br/><br/>
+
+	<%= f.label :language, "languages-select" %> <br/>
+	<%= select_tag :language, options_for_select([['Ruby', 1], ['C++', 2]]), :id => "languages-select" %> <br/> <br/>
+
+	<%= f.label :description %> <br/>
+	<%= f.text_field :description %> <br/> <br/>
+	
+	<%= label_tag :tags %> <br/>
+	<%= text_field_tag :tags, params[:tags], {:id => "tagnames"} %> <br/> <br/>
+	
+	<div id ="tag-preview" style="display: block;">
+	</div>
+
+	<div style ="position: absolute;" class="ac_results">
+		<ul id="#ul-tags" style="max-height: 300px; overflow-x: auto; overflow-y: auto;">
+			<li id="l0" class="ac_even">
+				<strong> ruby </strong>
+			</li>
+			
+			<li id="l1" class="ac_odd">
+				<strong> ruby </strong>
+				" on-rails"
+			</li>
+		</ul>
+	</div>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<br/>
+	<%= f.submit "Submit This Shiny Beautiful Code" %>
+
+<% end %>
