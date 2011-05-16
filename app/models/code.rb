@@ -1,7 +1,8 @@
 class Code < ActiveRecord::Base
   belongs_to :user
   has_and_belongs_to_many :tags
-
+  has_many :comments
+  
   after_initialize :init
   before_create :initialize_state
 

@@ -4,4 +4,15 @@
 	<%= @code.content %>
 	<%= @code.description %>
 	<div id="tags"> <%= render @code.tags %> </div>
+
+	<% @code.comments.each do |c| %>
+		<%= c.user.email %>
+		<%= c.content %>
+	<% end %>
+	
+	<%= form_for([@code, @code.comments.build]) do |f| %>
+		<%= f.label :content %>  <br/>
+		<%= f.text_field :content, {:id => "Comment"} %> <br/><br/>
+		<%= f.submit %> 
+	<% end %>
 </div>

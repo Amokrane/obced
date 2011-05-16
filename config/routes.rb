@@ -3,6 +3,7 @@ Obced::Application.routes.draw do
   resources :archives
   resources :codes do
     post 'vote_up'
+    resources :comments
   end
 
   resources :tags do 

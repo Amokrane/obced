@@ -13,6 +13,9 @@ module NavigationHelpers
       
     when /the codes\s?page/
       '/codes'
+
+    when /the code\s?page for "([^"]*)"/ 
+      code_path(Code.find_by_title!($1))
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #

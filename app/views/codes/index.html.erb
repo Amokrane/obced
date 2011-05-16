@@ -8,7 +8,7 @@
 		<% end %>
 		<%= button_to "Up", code_vote_up_path(:code_id => c.id) %>
 		<%= "Score=#{c.score}" %> <br/>
-		<%= "Title=#{c.title}" %> <br/>
+		<%= link_to "Title=#{c.title}", code_path(c) %> <br/>
 		<%= "Content=#{c.content}" %> <br/>
 		<%= "Description=#{c.description}" %> <br/> 
 		----
