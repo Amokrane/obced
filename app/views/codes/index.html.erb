@@ -1,5 +1,13 @@
-<%= link_to 'Sign In', new_user_session_path %> <br/>
+<%= link_to 'Sign In', new_user_session_path %> 
 <%= link_to 'New Code', new_code_path %> <br/>
+
+
+<%= form_for @search, :url => codes_path, :html => {:method => :get} do |f| %>
+	<%= f.label :language_contains %>
+	<%= f.text_field :language_contains, { :id => "search-by-language" } %>
+	<%= f.submit %>
+<% end %>
+<br/> <br/>
 
 <p>
 	<% @codes.each do |c| %>
@@ -15,4 +23,6 @@
 		<br/>
 	<% end %>
 </p>
+
+
 

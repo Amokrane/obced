@@ -88,7 +88,7 @@
 	<%= f.text_area :content %> <br/><br/>
 
 	<%= f.label :language, "languages-select" %> <br/>
-	<%= select_tag :language, options_for_select([['Ruby', 1], ['C++', 2]]), :id => "languages-select" %> <br/> <br/>
+	<%= f.select :language, options_for_select([['Ruby', 'Ruby'], ['C++', 'C++']]), :id => "languages-select" %> <br/> <br/>
 
 	<%= f.label :description %> <br/>
 	<%= f.text_field :description %> <br/> <br/>

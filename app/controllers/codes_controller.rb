@@ -2,7 +2,8 @@ class CodesController < ApplicationController
 	#before_filter :find_user
 
 	def index
-		@codes = Code.all
+		@search = Code.search(params[:search])
+		@codes = @search.all
 	end
 
 	def new
