@@ -1,5 +1,6 @@
 Obced::Application.routes.draw do
-  devise_for :users
+  devise_for :users 
+  resources :users, :only => [:index, :show]
   resources :archives
   resources :codes do
     post 'vote_up'

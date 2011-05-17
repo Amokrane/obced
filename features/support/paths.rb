@@ -8,14 +8,26 @@ module NavigationHelpers
   def path_to(page_name)
     case page_name
 
+    when /the signup\s?page/
+        '/users/sign_up'
+    when /the signin\s?page/
+        '/users/sign_in'
+
+    when /the user\s?page for "([^"]*)"/
+        user_path(User.find_by_nickname!($1))
+    when /the user\s?page/
+        '/users'
     when /the home\s?page/
       '/'
       
     when /the codes\s?page/
       '/codes'
 
+    
+
     when /the code\s?page for "([^"]*)"/ 
       code_path(Code.find_by_title!($1))
+
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
