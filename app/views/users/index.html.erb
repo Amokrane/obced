@@ -1,0 +1,3 @@
+<% @users.each do |u| %>
+	<p><%= link_to u.nickname, user_path(u) %> </p>
+<% end %>

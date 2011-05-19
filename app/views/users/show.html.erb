@@ -1,0 +1,11 @@
+<p> Profile page for: <%= @user.nickname %> </p>
+<p>Score=<%= @user.score %></p>
+<p> <%= button_to "Up", user_vote_up_path(:user_id => @user.id) %> </p>
+<p> <%= @user.email %> </p>
+<p> <%= @user.website %> </p>
+<p> <%= @user.biography %> </p>
+
+<p> This user posted the following codes: </p>
+<% @user.codes.each do |c| %>
+	<%= c.title %>
+<% end %>

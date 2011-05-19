@@ -18,7 +18,6 @@ Given /^I am signed in as them$/ do
   	And I fill in "Email" with "#{@user.email}"
   	And I fill in "Password" with "#{@user.password}"
   	And I press "Sign in"
-  	
   })
   #Then I should see "Signed in successfully."
 end
