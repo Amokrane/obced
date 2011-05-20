@@ -12,7 +12,7 @@
 	
 	<%= form_for([@code, @code.comments.build]) do |f| %>
 		<%= f.label :content %>  <br/>
-		<%= f.text_field :content, {:id => "Comment"} %> <br/><br/>
+		<%= f.text_area :content, {:id => "Comment"} %> <br/><br/>
 		<%= f.submit %> 
 	<% end %>
 </div>
