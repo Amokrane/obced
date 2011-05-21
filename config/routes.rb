@@ -3,7 +3,7 @@ Obced::Application.routes.draw do
   resources :users, :only => [:index, :show] do
     post 'vote_up'
   end
-  
+  resources :home
   resources :archives
   resources :codes do
     post 'vote_up'
@@ -14,5 +14,6 @@ Obced::Application.routes.draw do
   	get 'related_tags', :on => :collection
   end
 
-  root :to => "codes#index"
+  #root :to => "codes#index"
+  root :to => "home#index"
 end
