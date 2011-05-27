@@ -1,7 +1,9 @@
+<!-- http://daringfireball.net/projects/markdown/syntax -->
+<!-- http://github.github.com/github-flavored-markdown/ -->
 <div id="code">
 	<%= @code.title %>
 	<%= @code.language %>
-	<%= @code.content %>
+	<%= sanitize Kramdown::Document.new(@code.content).to_html %>
 	<%= @code.description %>
 	<div id="tags"> <%= render @code.tags %> </div>
 

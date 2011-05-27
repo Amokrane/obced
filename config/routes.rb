@@ -14,6 +14,5 @@ Obced::Application.routes.draw do
   	get 'related_tags', :on => :collection
   end
 
-  #root :to => "codes#index"
-  root :to => "home#index"
+  root :to => "codes#index"
 end
