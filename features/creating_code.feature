@@ -6,8 +6,8 @@ Feature: Creating codes
 
 Background:
 	Given there are the following users:
-		| email 					 | password | unconfirmed |
-		| amokrane.chentir@gmail.com | password | false 	  |
+		| nickname | email 					    | password | unconfirmed |
+		| Amokrane | amokrane.chentir@gmail.com | password | false 	     |
 	And I am signed in as them
 
 Scenario: Create a new code
@@ -19,5 +19,5 @@ Scenario: Create a new code
 	And I fill in "Description" with "This is a very simple hello world, but its beautiful!"
 	And I press "Submit This Shiny Beautiful Code"
 	Then I should see "Code has been submitted."
-	And the code "My first beautiful code" should be "proposed"
+	And the code "My first beautiful code" should be "active"
 
