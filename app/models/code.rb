@@ -22,7 +22,7 @@ class Code < ActiveRecord::Base
   end
 
   def initialize_state
-    self.state = "active"
+    self.code_state = CodeState.find_by_name("Active")
   end
 
 end

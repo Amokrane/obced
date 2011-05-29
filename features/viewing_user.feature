@@ -3,7 +3,6 @@ Feature: Viewing users
 	As a User
 	I should be able to check their profile page
 
-
 Background:
 	Given there are the following users:
 		| nickname | email 		    | password | unconfirmed | website             | biography |

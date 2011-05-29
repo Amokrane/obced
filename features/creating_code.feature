@@ -19,5 +19,5 @@ Scenario: Create a new code
 	And I fill in "Description" with "This is a very simple hello world, but its beautiful!"
 	And I press "Submit This Shiny Beautiful Code"
 	Then I should see "Code has been submitted."
-	And the code "My first beautiful code" should be "active"
+	And the code "My first beautiful code" should be "Active"
 

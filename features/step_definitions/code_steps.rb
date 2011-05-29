@@ -6,6 +6,6 @@ end
 
 Given /^the code "([^"]*)" should be "([^"]*)"$/ do |code, state|
 	code = Code.find_by_title(code)
-	code.state.should == state
+	code.code_state.should == CodeState.find_by_name(state)
 end
 
