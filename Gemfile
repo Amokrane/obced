@@ -8,6 +8,7 @@ gem 'jquery-rails', '>= 0.2.6'
 gem 'meta_search'
 gem 'delayed_job'
 gem "kramdown", "~> 0.13.3"
+gem "pg"
 
 group :test, :development do
 	gem 'rspec-rails', '~>2.3'

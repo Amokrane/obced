@@ -7,7 +7,7 @@ module ::Selenium::WebDriver::Firefox
       result = raw_execute(*args)['value']
       case speed
         when :slow
-          sleep 0.3
+          sleep 3.0
         when :medium
           sleep 0.1
       end

@@ -8,7 +8,7 @@ module Jobs
 
 		def perform
 			abcs = ActiveRecord::Base.configurations
-      		ActiveRecord::Base.establish_connection(abcs[RAILS_ENV])
+      		ActiveRecord::Base.establish_connection(abcs[::Rails.env])
       		selected_code = Code.order("score DESC").first
       		selected_code.code_state = CodeState.find_by_name("Selected")
 		end

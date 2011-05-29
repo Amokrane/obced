@@ -1,0 +1,30 @@
+<%= link_to 'Sign In', new_user_session_path %> <br/>
+<%= "Code of the day" %> <br/>
+
+<% @selected_codes.each do |sc| %>
+	
+	<p> Author:
+	<% if !sc.user.nil? %>
+		<%= sc.user.name %>
+	<% else %>
+		<%= "Unknown User" %> </p>
+	<% end %>
+
+	<p> Title:
+	<%= sc.title %> </p>
+
+	<p> Language:
+	<% if !sc.language.nil? %>
+		<%= sc.language %>
+	<% else %> 
+		<%= "Unknown language" %></p>
+	<% end %>
+
+	<p> Code:
+	<%= sc.content %> </p>
+
+	<% if !sc.description.nil? %>
+		<p> Description:
+		<%= sc.description %> </p>
+	<% end %>
+<% end %>

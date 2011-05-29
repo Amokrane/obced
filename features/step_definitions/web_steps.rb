@@ -41,6 +41,10 @@ When /^(.*) within ([^:]+):$/ do |step, parent, table_or_string|
   with_scope(parent) { When "#{step}:", table_or_string }
 end
 
+Then /^there should be (\d+) entries in "([^"]*)"$/ do |amount, table|
+   eval(table).count.should ==  amount.to_i
+end
+
 Given /^(?:|I )am on (.+)$/ do |page_name|
   visit path_to(page_name)
 end
