@@ -4,7 +4,7 @@ namespace :jobs do
 		begin
 			Delayed::Job.enqueue Jobs::CodeCaster.new
 		rescue => e
-			puts "Error: #{e}"
+			STDERR.puts "Error: #{e}"
 		end
 	end
 end

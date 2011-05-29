@@ -6,7 +6,7 @@ class Code < ActiveRecord::Base
   belongs_to :code_state
   
   # Callbacks
-  after_initialize :init_score, :initialize_state
+  before_create :init_score, :initialize_state
 
 
   def tag! tags
