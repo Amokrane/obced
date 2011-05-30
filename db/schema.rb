@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110528145054) do
+ActiveRecord::Schema.define(:version => 20110529234713) do
 
   create_table "code_states", :force => true do |t|
     t.string   "name"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(:version => 20110528145054) do
     t.datetime "updated_at"
     t.string   "state"
     t.integer  "code_state_id"
+    t.datetime "selected_at"
   end
 
   create_table "codes_tags", :id => false, :force => true do |t|
