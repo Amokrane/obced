@@ -10,10 +10,15 @@ module Jobs
 			abcs = ActiveRecord::Base.configurations
       		ActiveRecord::Base.establish_connection(abcs[::Rails.env])
       		unless !Code.where(:code_state_id => 2).empty?
-		  		selected_code = Code.order("score DESC").first
-		  		selected_code.selected_at = Time.now
-		  		selected_code.code_state = CodeState.find_by_name("Selected")
-		  		selected_code.save
+  				begin
+	  				selected_code = Code.where(:code_state_id => 1).order("score DESC").first
+	  				#raise selected_code.inspect
+	  				selected_code.selected_at = Time.now
+	  				selected_code.code_state = CodeState.find_by_name("Selected")
+	  				selected_code.save
+		  		rescue => e
+		  			STDERR.puts "Error when selecting a code #{e}"
+		  		end
       		end
 		end
 	end

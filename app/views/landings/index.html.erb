@@ -1,11 +1,12 @@
 <%= link_to 'Sign In', new_user_session_path %> <br/>
+<%= link_to 'Archives', archives_path %> <br/>
 <%= "Code of the day" %> <br/>
 
 <% @selected_codes.each do |sc| %>
 	
 	<p> Author:
 	<% if !sc.user.nil? %>
-		<%= sc.user.name %>
+		<%= sc.user.email %>
 	<% else %>
 		<%= "Unknown User" %> </p>
 	<% end %>
