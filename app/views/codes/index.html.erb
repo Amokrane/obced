@@ -3,6 +3,10 @@
 <%= link_to 'users', users_path %> <br/>
 
 <br/>
+
+<%= link_to 'Sorty by date', '' %> <br/>
+<%= link_to 'Sort by popularity, '' %> <br/>
+<%= link_to 'Sort by score', '' %> <br/>
 <%= form_for @search, :url => codes_path, :html => {:method => :get} do |f| %>
 	<%= f.label :language_contains %>
 	<%= f.text_field :language_contains, { :id => "search-by-language" } %>

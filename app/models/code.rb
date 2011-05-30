@@ -8,6 +8,10 @@ class Code < ActiveRecord::Base
   # Callbacks
   before_create :init_score, :initialize_state
 
+  # Named scopes
+  named_scope :best, :order => 'score desc'
+  named_scope :recent, :order => 'created_at desc'
+  #named_scope :popular, :include => :comments, :order => ["score + ?.comments desc", self]
 
   def tag! tags
     tags = tags.split(" ").map do |tag|
