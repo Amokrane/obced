@@ -1,6 +1,12 @@
 class UsersController < ApplicationController
 	def index
-		@search = User.search(params[:search])	
+		if params[:criteria] == 'sort_by_date'
+			@search = User.recent.search(params[:search])
+		elsif params[:criteria] == 'sort_by_score'
+			@search = User.best.search(params[:search])	
+		else
+			@search = User.search(params[:search])	
+		end
 		@users = @search
 	end
 

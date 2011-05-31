@@ -17,6 +17,9 @@ class User < ActiveRecord::Base
   after_initialize :init_score
   before_save :init_nickname
 
+  # Scopes
+  scope :recent, :order => "created_at desc"
+  scope :best, :order => "score desc"
 
   private
   def init_score
