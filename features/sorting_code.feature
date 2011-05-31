@@ -13,11 +13,18 @@ Background:
 Scenario: Sorting code by date
 	Given I am on the codes page
 	And I follow "Sort by date"
+	Then I should see in this order:
+		| puts Hello World 	   |
+		| p.capitalize(&:name) |
+Scenario: Sorting code by score
+	Given I am on the codes page
+	And I follow "Sort by score"
+	Then I should see in this order:
+		| p.capitalize(&:name) 	   |
+		| puts Hello World		   |
 
 Scenario: Sorting code by popularity
 	Given I am on the codes page
 	And I follow "Sort by popularity"
 
-Scenario: Sorting code by score
-	Given I am on the codes page
-	And I follow "Sort by score"
+	

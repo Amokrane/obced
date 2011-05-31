@@ -9,3 +9,8 @@ Given /^the code "([^"]*)" should be "([^"]*)"$/ do |code, state|
 	code.code_state.should == CodeState.find_by_name(state)
 end
 
+Given /^I should see in this order:$/ do |table|
+  expected_order = table.raw
+  actual_order = all('a.code').collect(&:text)
+  actual_order.should == expected_order.flatten
+end

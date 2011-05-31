@@ -2,7 +2,13 @@ class CodesController < ApplicationController
 	#before_filter :find_user
 
 	def index
-		@search = Code.recent.search(params[:search])
+		if params[:criteria] == 'sort_by_date'
+			@search = Code.recent.search(params[:search])
+		elsif params[:criteria] == 'sort_by_score'
+			@search = Code.best.search(params[:search])	
+		else
+			@search = Code.search(params[:search])	
+		end
 		@codes = @search
 	end
 

@@ -4,9 +4,8 @@
 
 <br/>
 
-<%= link_to 'Sorty by date', '' %> <br/>
-<%= link_to 'Sort by popularity, '' %> <br/>
-<%= link_to 'Sort by score', '' %> <br/>
+<%= link_to 'Sort by date', codes_path('criteria' => 'sort_by_date') %> <br/>
+<%= link_to 'Sort by score', codes_path('criteria' => 'sort_by_score') %> <br/>
 <%= form_for @search, :url => codes_path, :html => {:method => :get} do |f| %>
 	<%= f.label :language_contains %>
 	<%= f.text_field :language_contains, { :id => "search-by-language" } %>
@@ -21,7 +20,8 @@
 		<% end %>
 		<%= button_to "Up", code_vote_up_path(:code_id => c.id) %>
 		<%= "Score=#{c.score}" %> <br/>
-		<%= link_to "Title=#{c.title}", code_path(c) %> <br/>
+		<p> Title=
+		<%= link_to "#{c.title}", code_path(c), :id => 'code' %> <p/>
 		<%= "Content=#{c.content}" %> <br/>
 		<%= "Description=#{c.description}" %> <br/> 
 		----
