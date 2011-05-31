@@ -1,3 +1,10 @@
+<%= form_for @search, :url => users_path, :html => {:method => :get} do |f| %>
+	<%= f.label :nickname_contains %>
+	<%= f.text_field :nickname_contains, { :id => "search-by-nickname" } %>
+	<%= f.submit %>
+<% end %>
+<br/> <br/>
+
 <% @users.each do |u| %>
 	<p><%= link_to u.nickname, user_path(u) %> </p>
 <% end %>

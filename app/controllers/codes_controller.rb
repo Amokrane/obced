@@ -50,6 +50,23 @@ class CodesController < ApplicationController
 		end
 	end
 
+	def vote_down
+		@code = Code.find(params[:code_id])
+		@code.score -= 1
+
+		respond_to do |format|
+			if @code.save
+				format.html {
+					redirect_to(codes_path, :notice => "Voted down")
+				}
+			else
+				format.html {
+					render :action => "vote_down"
+				}
+			end			
+		end
+	end
+
 	private
 	def find_user
 		@user = User.find(params[:user_id])
