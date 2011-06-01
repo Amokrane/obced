@@ -1,0 +1,5 @@
+<%= "Code with the tag #{@tag.name}" %> <br/>
+<% @tag.codes.each do |code| %>
+	<%= link_to code.title, code_path(code) %> <br/>
+<% end %>
+

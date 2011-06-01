@@ -16,6 +16,7 @@ class User < ActiveRecord::Base
   # Callbacks
   after_initialize :init_score
   before_save :init_nickname
+  after_create :send_welcome_email
 
   # Scopes
   scope :recent, :order => "created_at desc"
@@ -29,6 +30,10 @@ class User < ActiveRecord::Base
   def init_nickname
     m = /^(.+)\@/.match self.email
     nickname ||= m[1]
+  end
+
+  def send_welcome_email
+    UserMailer.delay.welcome_email self
   end
 end
 
