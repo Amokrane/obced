@@ -1,0 +1,6 @@
+<%= "Dear #{@user.email}," %> <br/>
+<%= "This is your daily code of the day email!"%> <br/>
+<%= "Today the selected code is #{@code.title}" %> <br/>
+
+<%= "Want to read this code and join the discussion?" %>
+<%= link_to "Follow this link!", code_path(@code) %>

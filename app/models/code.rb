@@ -21,6 +21,20 @@ class Code < ActiveRecord::Base
     self.tags << tags
   end
 
+  def email_as_selected_to_author
+    # Sending an email to the author annoucing the good news
+    if self.user.email_selected_code == true
+      UserMailer.delay.code_selected_email self.user
+    end
+  end
+
+  def email_as_selected_to_subscribers
+    subscribers = User.all.map.reject { |u| (u == self.user) and (u.email_code_of_the_day != true) }
+    subscribers.each do |subscriber|
+      UserMailer.delay.code_of_the_day_email(subscriber, self)
+    end
+  end
+
   private
   def init_score
     self.score ||= 0
