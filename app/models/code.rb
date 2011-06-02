@@ -35,6 +35,10 @@ class Code < ActiveRecord::Base
     end
   end
 
+  def email_to_external_user user, to_name, to_email
+    UserMailer.delay.code_to_external_user_email(user, to_name, to_email, self)
+  end
+
   private
   def init_score
     self.score ||= 0
