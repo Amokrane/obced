@@ -12,7 +12,8 @@ class User < ActiveRecord::Base
 
   # Relations
   has_many :codes
-
+  has_many :authentications
+  
   # Callbacks
   after_initialize :init_score
   before_save :init_nickname
@@ -21,6 +22,14 @@ class User < ActiveRecord::Base
   # Scopes
   scope :recent, :order => "created_at desc"
   scope :best, :order => "score desc"
+
+  def apply_omniauth omniauth
+    authentications.build(:provider => omniauth['provider'], :uid => omniauth['uid'])
+  end
+
+  def password_required?
+    (authentications.empty? || !password.blank?) && super
+  end
 
   private
   def init_score

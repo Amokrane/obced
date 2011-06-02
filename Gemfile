@@ -7,8 +7,9 @@ gem 'mongrel', '1.2.0.pre2'
 gem 'jquery-rails', '>= 0.2.6'
 gem 'meta_search'
 gem 'delayed_job'
-gem "kramdown", "~> 0.13.3"
-gem "pg"
+gem 'kramdown', '~> 0.13.3'
+gem 'pg'
+gem 'omniauth'
 
 group :test, :development do
 	gem 'rspec-rails', '~>2.3'

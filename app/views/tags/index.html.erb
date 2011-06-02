@@ -1,3 +1,7 @@
-<%= @tags.each do |tag| %>
-	<p> <%= link_to tag.name, tag_path(tag) %> x <%= tag.nb_occurences %> </p>
+<% @tags.each do |tag| %>
+	<% if tag.nb_occurences %>
+		<p> <%= link_to tag.name, tag_path(tag) %> x <%= tag.nb_occurences %> </p>
+	<% else %>
+		<p> <%= link_to tag.name, tag_path(tag) %> x 0 </p>
+	<% end %>
 <% end %>
