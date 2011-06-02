@@ -1,0 +1,22 @@
+<% if current_user.nil? %>
+	<p>
+		<%= label_tag :from_email, "Your email" %>
+		<%= text_field_tag :from_email, params[:from_email] %>
+	</p>
+
+	<p>
+		<%= label_tag :from_name, "Your name" %>
+		<%= text_field_tag :from_name, params[:from_name] %>
+	</p>
+<% end %>
+
+<p>
+	<%= label_tag :to_email, "His/Her email" %>
+	<%= text_field_tag :to_email, params[:to_email] %>
+</p>
+
+<p>
+	<%= label_tag :to_name, "His/Her name" %>
+	<%= text_field_tag :to_name, params[:to_name] %>
+</p>
+

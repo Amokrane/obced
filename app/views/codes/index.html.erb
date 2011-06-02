@@ -24,7 +24,8 @@
 		<%= "Score=#{c.score}" %> <br/>
 		<p> Title=
 		<%= link_to "#{c.title}", code_path(c), :id => 'code' %> <p/>
-		<%= "Content=#{c.content}" %> <br/>
+		<p> Content = 
+		<%= sanitize Kramdown::Document.new(c.content).to_html %> </p>
 		<%= "Description=#{c.description}" %> <br/> 
 		----
 		<br/>

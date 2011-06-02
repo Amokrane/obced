@@ -13,7 +13,6 @@ class Code < ActiveRecord::Base
   scope :recent, :order => 'created_at desc'
   #scope :popular, :include => :comments, :order => ''
 
-
   def tag! tags
     tags = tags.split(" ").map do |tag|
         Tag.find_or_create_by_name(tag) 

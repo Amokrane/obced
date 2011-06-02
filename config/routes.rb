@@ -8,6 +8,7 @@ Obced::Application.routes.draw do
   resources :codes do
     post 'vote_up'
     post 'vote_down'
+    post 'share_by_email'
     resources :comments
   end
 

@@ -54,7 +54,7 @@ class UserMailer < ActionMailer::Base
 	 	else
 	 		mail(:to => @to_email,
 			 	 :from => '"Amokrane from Hello Code" <amokrane.chentir@gmail.com>',
-			 	 :subject => "#{@to_name}, #{@user.nickname} wanted to share a beautiful code with you today!")
+			 	 :subject => "#{@to_name}, #{@user.email} wanted to share a beautiful code with you today!")
 		end
 	end
 end

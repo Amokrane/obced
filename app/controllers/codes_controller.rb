@@ -67,6 +67,13 @@ class CodesController < ApplicationController
 		end
 	end
 
+	def share_by_email
+		code = Code.find(params[:code_id])
+		user = User.find(params["current_user"].to_i)
+		code.email_to_external_user(user, params[:to_name], params[:to_email])
+		redirect_to(codes_path, :notice => "Email sent, thanks!")
+	end
+
 	private
 	def find_user
 		@user = User.find(params[:user_id])
