@@ -24,7 +24,10 @@ class User < ActiveRecord::Base
   scope :best, :order => "score desc"
 
   def apply_omniauth omniauth
-    authentications.build(:provider => omniauth['provider'], :uid => omniauth['uid'])
+    authentications.build(:provider => omniauth['provider'], 
+                          :uid => omniauth['uid'], 
+                          :nickname => omniauth['user_info']['nickname'], 
+                          :name => omniauth['user_info']['name'])
   end
 
   def password_required?
