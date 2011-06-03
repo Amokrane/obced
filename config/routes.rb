@@ -11,6 +11,7 @@ Obced::Application.routes.draw do
     post 'vote_up'
     post 'vote_down'
     post 'share_by_email'
+    get 'import_gist', :on => :collection
     resources :comments
   end
 

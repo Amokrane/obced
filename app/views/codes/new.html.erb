@@ -15,6 +15,8 @@
 	});
 </script>
 
+<%= link_to "Share one of my Gists instead", import_gist_codes_path %> <br/>
+
 <%= form_for(@code) do |f| %>
 	<%= f.label :title %> <br/>
 	<%= f.text_field :title %> <br/> <br/>

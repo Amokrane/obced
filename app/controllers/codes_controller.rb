@@ -74,6 +74,9 @@ class CodesController < ApplicationController
 		redirect_to(codes_path, :notice => "Email sent, thanks!")
 	end
 
+	def import_gist
+	end
+
 	private
 	def find_user
 		@user = User.find(params[:user_id])
