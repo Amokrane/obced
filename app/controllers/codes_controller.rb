@@ -75,6 +75,7 @@ class CodesController < ApplicationController
 	end
 
 	def import_gist
+		@gists, @gists_contents = Code.import_gist_by_user current_user
 	end
 
 	private

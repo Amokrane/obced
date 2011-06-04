@@ -1,3 +1,18 @@
 <%= image_tag("logo_gist.png") %>
 <h1> Import your Gists </h1>
+<br/>
+<% @gists.each_pair do |k_g, v_g| %>
+	<h3><u><%= "GitHub account number #{k_g}" %></u></h3> 
+	<% @gists[k_g]["gists"].each do |gist| %>
+		<ul>
+			<li> <u> <%= gist["description"] %> </u> </li>
+			<% @gists_contents[gist["repo"]].each_pair do |k_gc, v_gc| %>
+				<h4><u> <%= k_gc %> </u></h4>
+				<ul>
+					<li><%= sanitize Kramdown::Document.new(simple_format(h v_gc)).to_html %></li>
+				</ul>
+			<% end %>
+		</ul>
+	<% end %>
+<% end %>
 

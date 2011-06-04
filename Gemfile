@@ -10,6 +10,8 @@ gem 'delayed_job'
 gem 'kramdown', '~> 0.13.3'
 gem 'pg'
 gem 'omniauth'
+gem 'rubycurl'
+gem 'curb-fu' 
 
 group :test, :development do
 	gem 'rspec-rails', '~>2.3'

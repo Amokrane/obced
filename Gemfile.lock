@@ -52,6 +52,10 @@ GEM
       cucumber (>= 0.10.3)
       nokogiri (>= 1.4.4)
       rack-test (>= 0.5.7)
+    curb (0.7.15)
+    curb-fu (0.4.4)
+      curb (>= 0.5.4.0)
+      rack-test (>= 0.2.0)
     daemons (1.0.10)
     database_cleaner (0.6.7)
     delayed_job (2.1.4)
@@ -180,6 +184,7 @@ GEM
     ruby-openid (2.1.8)
     ruby-openid-apps-discovery (1.2.0)
       ruby-openid (>= 2.1.7)
+    rubycurl (1.7.3)
     rubyntlm (0.1.1)
     rubyzip (0.9.4)
     selenium-webdriver (0.2.0)
@@ -204,6 +209,7 @@ PLATFORMS
 DEPENDENCIES
   capybara
   cucumber-rails
+  curb-fu
   database_cleaner
   delayed_job
   devise
@@ -216,4 +222,5 @@ DEPENDENCIES
   pg
   rails (= 3.0.5)
   rspec-rails (~> 2.3)
+  rubycurl
   sqlite3
