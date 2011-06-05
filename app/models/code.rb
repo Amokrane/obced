@@ -41,34 +41,6 @@ class Code < ActiveRecord::Base
     UserMailer.delay.code_to_external_user_email(user, to_name, to_email, self)
   end
 
-  def self.import_gist_by_user user
-    gists = {}
-    gists_contents = {}
-    i = 0
-    
-    github_accounts = user.authentications.where("provider = 'github'")
-    github_accounts.each do |ga|
-      url = URI.parse("http://gist.github.com/api/v1/json/gists/#{ga.nickname}")
-      gists_json = Net::HTTP.start(url.host, url.port) do |http|
-        http.get("/api/v1/json/gists/#{ga.nickname}")
-      end
-      gists[i] = JSON.parse(gists_json.body)
-      i += 1
-    end
-
-    gists.each_pair do |k, v|
-      gists[k]["gists"].each do |gist|
-        gist["files"].each do |gist_file|
-          gists_contents[gist["repo"]] = {}
-          response = CurbFu.get("https://gist.github.com/raw/#{gist["repo"]}/#{gist_file}")
-          gists_contents[gist["repo"]][gist_file] = response.body
-        end
-      end
-    end 
-
-    return [gists, gists_contents]
-  end
-
   private
   def init_score
     self.score ||= 0

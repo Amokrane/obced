@@ -13,7 +13,13 @@ class CodesController < ApplicationController
 	end
 
 	def new
-		@code = Code.new(:user_id => current_user.id)
+		if params['gist_id']
+			@gist = Code.import_gist_by_id params['gist_id']
+			raise @gist.inspect
+			@code = Code.new(:user_id => current_user.id, :title => "")
+		else 
+			@code = Code.new(:user_id => current_user.id)
+		end
 	end
 
 	def create
@@ -75,7 +81,7 @@ class CodesController < ApplicationController
 	end
 
 	def import_gist
-		@gists, @gists_contents = Code.import_gist_by_user current_user
+		@gists, @gists_contents = Gist.import_gist_by_user current_user
 	end
 
 	private
