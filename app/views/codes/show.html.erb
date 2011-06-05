@@ -1,5 +1,15 @@
 <!-- http://daringfireball.net/projects/markdown/syntax -->
 <!-- http://github.github.com/github-flavored-markdown/ -->
+
+<script type="text/javascript" src="http://platform.twitter.com/widgets.js">
+</script>
+
+<% @twitter_text = "OH: Beautiful code proposal here #{code_url(@code)} (via @ohthecode)" %>
+<a href="http://twitter.com/share"  class="twitter-share-button" 
+	data-text="<%= @twitter_text %>" 
+	data-url="none" 
+	data-count="none"> Tweet this code </a>
+
 <div id="code">
 	<%= @code.title %>
 	<%= @code.language %>

@@ -1,3 +1,6 @@
+<script type="text/javascript" src="http://platform.twitter.com/widgets.js">
+</script>
+
 <% if current_user %>
 	<% if current_user.nickname %>
 		<%= "You are signed in as #{current_user.nickname}" %> <br/>
@@ -19,6 +22,12 @@
 <h1> This is the code of the day my friends: </h1>
 
 <% @selected_codes.each do |sc| %>
+	<% @twitter_text = "OH: what a beautiful code #{code_url(sc)} (via @ohthecode)" %>
+	<a href="http://twitter.com/share"  class="twitter-share-button" 
+	data-text="<%= @twitter_text %>" 
+	data-url="none" 
+	data-count="none"> Tweet this code </a>
+
 	<p> Author:
 	<% if !sc.user.nil? %>
 		<%= sc.user.email %>
