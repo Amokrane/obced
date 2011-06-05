@@ -7,7 +7,7 @@ class CodesController < ApplicationController
 		elsif params[:criteria] == 'sort_by_score'
 			@search = Code.best.search(params[:search])	
 		else
-			@search = Code.search(params[:search])	
+			@search = Code.recent.search(params[:search])	
 		end
 		@codes = @search
 	end
