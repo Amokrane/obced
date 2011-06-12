@@ -1,0 +1,61 @@
+	html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+
+		background: transparent;
+		border: 0px;
+		font-size: 100%;
+		margin: 0px;
+		vertical-align: baseline;
+	 }
+
+
+	#tagnames {
+		width: 660px;	
+	}
+
+	input {
+		margin: 5px 9px;
+		padding: 3px;
+	}
+
+	input, select, button {
+		border: 1px solid #999;	
+		font-family: 'Trebuchet MS';
+		font-size: 100%;
+	}
+
+	.ac_results {
+		background-color: white;
+		border: 1px solid #777;
+		overflow: hidden;
+		padding: 0px;
+		text-align: left;
+		z-index: 300;
+	}
+
+	element.style {
+		max-height: 300px;	
+		overflow: auto;
+	}
+
+	.ac_results ul {
+		list-style: none;
+		margin: 0px;
+		padding: 0px;
+		width: 100%;
+	}
+
+	.ac_results li {
+		cursor: default;
+		display: block;
+		font-family: 'Trebuchet MS';
+		line-height: 16px;
+		margin: 0px;
+		overflow: hidden;
+		padding: 2px 5px;
+	}
+
+	.ac_over {
+		background-color: #F90;
+		color: white;
+		font-family: 'Trebuchet MS';
+	}
