@@ -1,9 +1,8 @@
 <script type="text/javascript" src="http://platform.twitter.com/widgets.js">
 </script>
 
-<h1> This is the code of the day my friends: </h1>
-
 <% @selected_codes.each do |sc| %>
+<h1> This is the code of the day my friends: </h1>
 	<% @twitter_text = "OH: what a beautiful code #{code_url(sc)} (via @ohthecode)" %>
 	<a href="http://twitter.com/share"  class="twitter-share-button" 
 	data-text="<%= @twitter_text %>" 

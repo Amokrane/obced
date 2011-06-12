@@ -17,12 +17,12 @@
 			
 	<div id="menu">
 		<% if current_user %>
-			<%= link_to 'Active codes', codes_path %> |
-			<%= link_to 'Propose your most beautiful code', new_code_path %>|
-			<%= link_to 'Tags', tags_path %> 
+			<%= link_to 'Active codes', codes_path %> |<br/>
+			<%= link_to 'Propose your most beautiful code', new_code_path %>| <br/>
+			<%= link_to 'Tags', tags_path %> | <br/>
 		<% end %>
 
-		<%= link_to 'Archives', archives_path %> <br/>
+		<%= link_to 'Archives', archives_path %> <br/> |
 		<%= link_to 'Link your GitHub account', '/auth/GitHub/' %> <br/>
 	</div>	
 </body>
