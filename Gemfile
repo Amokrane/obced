@@ -9,7 +9,7 @@ gem 'meta_search'
 gem 'delayed_job'
 gem 'kramdown', '~> 0.13.3'
 gem 'pg'
-gem 'omniauth'
+gem 'omniauth', :path => "../omniauth"
 gem 'rubycurl'
 gem 'curb-fu' 
 
@@ -22,4 +22,4 @@ group :test do
 	gem 'capybara'
 	gem 'factory_girl'
 	gem 'database_cleaner'
-end
+end 
