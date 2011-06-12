@@ -9,7 +9,7 @@ gem 'meta_search'
 gem 'delayed_job'
 gem 'kramdown', '~> 0.13.3'
 gem 'pg'
-gem 'omniauth', :path => "../omniauth"
+gem 'omniauth'
 gem 'rubycurl'
 gem 'curb-fu' 
 
