@@ -2,7 +2,7 @@
 </script>
 
 <% @selected_codes.each do |sc| %>
-<h1> This is the code of the day my friends: </h1>
+<h1> The code of the day is: </h1>
 	<% @twitter_text = "OH: what a beautiful code #{code_url(sc)} (via @ohthecode)" %>
 	<a href="http://twitter.com/share"  class="twitter-share-button" 
 	data-text="<%= @twitter_text %>" 

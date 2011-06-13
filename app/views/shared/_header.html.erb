@@ -1,28 +1,25 @@
 <body>
 	<%= image_tag("github_logo.png") %> <br/>
 
-	<div id="authentication">
-		<% if current_user %>
-			  <% if current_user.nickname %>
-					<%= "You are signed in as #{current_user.nickname}" %> <br/>
-				<% else %>
-					<%= "You are signed in as #{current_user.email}" %> <br/>
-				<% end %>	
-				<%= link_to 'Sign me out', destroy_user_session_path %>  <br/>
-		<% else %>
-				<%= link_to 'Sign In with devise', new_user_session_path %> <br/>
-				<%= link_to 'Sign In with Twitter', '/auth/twitter' %> <br/>
-		<% end %>
-	</div>
-			
-	<div id="menu">
-		<% if current_user %>
-			<%= link_to 'Active codes', codes_path %> | <br/>
-			<%= link_to 'Propose your most beautiful code', new_code_path %> | <br/>
-			<%= link_to 'Tags', tags_path %> | <br/>
-		<% end %>
-		<%= link_to 'Home', root_path %> | <br/> 
-		<%= link_to 'Archives', archives_path %> | <br/> 
-		<%= link_to 'Link your GitHub account', '/auth/GitHub/' %> | <br/>
-	</div>	
+	
+	<% if current_user %>
+		  <% if current_user.nickname %>
+				<%= "You are signed in as #{current_user.nickname}" %> <br/>
+			<% else %>
+				<%= "You are signed in as #{current_user.email}" %> <br/>
+			<% end %>	
+			<%= link_to 'Logout', destroy_user_session_path %>  <br/>
+	<% else %>
+			<%= link_to 'Login', new_user_session_path %> <br/>
+			<%= link_to 'Or login via Twitter', '/auth/twitter' %> <br/>
+	<% end %>
+	
+	<% if current_user %>
+		<%= link_to 'Active codes', codes_path %> | <br/>
+		<%= link_to 'Propose your most beautiful code', new_code_path %> | <br/>
+		<%= link_to 'Tags', tags_path %> | <br/>
+	<% end %>
+	<%= link_to 'Home', root_path %> | <br/> 
+	<%= link_to 'Archives', archives_path %> | <br/> 
+	
 </body>
