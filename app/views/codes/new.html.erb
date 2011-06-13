@@ -28,7 +28,7 @@
 	<%= f.select :language, options_for_select([['Ruby', 'Ruby'], ['C++', 'C++']]), :id => "languages-select" %> <br/> <br/>
 
 	<%= f.label :description %> <br/>
-	<%= f.text_field :description %> <br/> <br/>
+	<%= f.text_area :description %> <br/> <br/>
 	
 	<%= label_tag :tags %> <br/>
 	<%= text_field_tag :tags, params[:tags], {:id => "tagnames"} %> <br/> <br/>

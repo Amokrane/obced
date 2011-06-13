@@ -1,0 +1,183 @@
+<mockup version="1.0" skin="sketch" measuredW="1344" measuredH="1180" mockupW="1096" mockupH="1143">
+  <controls>
+    <control controlID="1599" controlTypeID="com.balsamiq.mockups::Canvas" x="248" y="37" w="875" h="1143" measuredW="100" measuredH="70" zOrder="1" locked="false" isInGroup="-1"/>
+    <control controlID="1600" controlTypeID="com.balsamiq.mockups::IconLabel" x="278" y="52" w="-1" h="-1" measuredW="123" measuredH="82" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>20</size>
+        <text>OhTheCode%21</text>
+      </controlProperties>
+    </control>
+    <control controlID="1601" controlTypeID="com.balsamiq.mockups::Label" x="257" y="130" w="192" h="19" measuredW="192" measuredH="19" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>9</size>
+        <text>Share%20your%20beautiful%20code%20with%20your%20peers%21</text>
+      </controlProperties>
+    </control>
+    <control controlID="1602" controlTypeID="com.balsamiq.mockups::LinkBar" x="933" y="52" w="-1" h="-1" measuredW="103" measuredH="25" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Home%2C%20Logout</text>
+      </controlProperties>
+    </control>
+    <control controlID="1606" controlTypeID="com.balsamiq.mockups::LinkBar" x="411" y="1134" w="-1" h="-1" measuredW="445" measuredH="25" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Blog%2C%20About%2C%20Contact%2C%20Terms%20of%20service%2C%20Privacy%2C%20Security</text>
+      </controlProperties>
+    </control>
+    <control controlID="1609" controlTypeID="com.balsamiq.mockups::Canvas" x="263" y="164" w="618" h="955" measuredW="100" measuredH="70" zOrder="6" locked="false" isInGroup="-1"/>
+    <control controlID="1640" controlTypeID="com.balsamiq.mockups::Button" x="710" y="125" w="-1" h="-1" measuredW="60" measuredH="28" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Users</text>
+      </controlProperties>
+    </control>
+    <control controlID="1641" controlTypeID="com.balsamiq.mockups::Button" x="619" y="125" w="-1" h="-1" measuredW="76" measuredH="28" zOrder="8" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Archives</text>
+      </controlProperties>
+    </control>
+    <control controlID="1642" controlTypeID="com.balsamiq.mockups::Button" x="504" y="125" w="-1" h="-1" measuredW="105" measuredH="28" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Active%20codes</text>
+      </controlProperties>
+    </control>
+    <control controlID="1656" controlTypeID="com.balsamiq.mockups::Link" x="786" y="51" w="-1" h="-1" measuredW="111" measuredH="25" zOrder="10" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Amokrane%20%282344%29</text>
+      </controlProperties>
+    </control>
+    <control controlID="1657" controlTypeID="com.balsamiq.mockups::IconLabel" x="695" y="46" w="91" h="-1" measuredW="85" measuredH="73" zOrder="11" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Little%20avatar</text>
+      </controlProperties>
+    </control>
+    <control controlID="1658" controlTypeID="com.balsamiq.mockups::Tooltip" x="846" y="76" w="-1" h="-1" measuredW="93" measuredH="33.9" zOrder="12" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>My%20score</text>
+      </controlProperties>
+    </control>
+    <control controlID="1659" controlTypeID="com.balsamiq.mockups::Button" x="947" y="125" w="-1" h="-1" measuredW="98" measuredH="28" zOrder="13" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Add%20a%20Code</text>
+      </controlProperties>
+    </control>
+    <control controlID="1685" controlTypeID="com.balsamiq.mockups::Canvas" x="544" y="253" w="302" h="277" measuredW="100" measuredH="70" zOrder="0" locked="false" isInGroup="-1"/>
+    <control controlID="1699" controlTypeID="com.balsamiq.mockups::Canvas" x="889" y="195" w="213" h="144" measuredW="100" measuredH="70" zOrder="14" locked="false" isInGroup="-1"/>
+    <control controlID="1700" controlTypeID="com.balsamiq.mockups::Label" x="897" y="203" w="179" h="128" measuredW="568" measuredH="25" zOrder="15" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Inside%20this%20bloc%2C%20some%20indications%20on%20how%20to%20write%20a%20code%20and%20how%20to%20write%20a%20description.</text>
+      </controlProperties>
+    </control>
+    <control controlID="1701" controlTypeID="com.balsamiq.mockups::Canvas" x="889" y="396" w="213" h="723" measuredW="100" measuredH="70" zOrder="16" locked="false" isInGroup="-1"/>
+    <control controlID="1702" controlTypeID="com.balsamiq.mockups::Label" x="894" y="162" w="-1" h="-1" measuredW="156" measuredH="25" zOrder="17" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>How%20to%20propose%20a%20code%3A</text>
+      </controlProperties>
+    </control>
+    <control controlID="1703" controlTypeID="com.balsamiq.mockups::Label" x="894" y="365" w="-1" h="-1" measuredW="99" measuredH="25" zOrder="18" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Related%20codes%3A</text>
+      </controlProperties>
+    </control>
+    <control controlID="1704" controlTypeID="com.balsamiq.mockups::Link" x="906" y="418" w="-1" h="-1" measuredW="49" measuredH="25" zOrder="19" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Code%201</text>
+      </controlProperties>
+    </control>
+    <control controlID="1705" controlTypeID="com.balsamiq.mockups::Link" x="906" y="457" w="-1" h="-1" measuredW="48" measuredH="25" zOrder="20" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Code%202</text>
+      </controlProperties>
+    </control>
+    <control controlID="1706" controlTypeID="com.balsamiq.mockups::Link" x="906" y="503" w="-1" h="-1" measuredW="48" measuredH="25" zOrder="21" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Code%203</text>
+      </controlProperties>
+    </control>
+    <control controlID="1707" controlTypeID="com.balsamiq.mockups::Link" x="906" y="551" w="-1" h="-1" measuredW="48" measuredH="25" zOrder="22" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Code%204</text>
+      </controlProperties>
+    </control>
+    <control controlID="1708" controlTypeID="com.balsamiq.mockups::Link" x="906" y="598" w="-1" h="-1" measuredW="48" measuredH="25" zOrder="23" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Code%205</text>
+      </controlProperties>
+    </control>
+    <control controlID="1709" controlTypeID="com.balsamiq.mockups::Label" x="287" y="187" w="-1" h="-1" measuredW="43" measuredH="29" zOrder="24" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>16</size>
+        <text>Title</text>
+      </controlProperties>
+    </control>
+    <control controlID="1710" controlTypeID="com.balsamiq.mockups::Label" x="287" y="215" w="-1" h="-1" measuredW="82" measuredH="20" zOrder="25" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>10</size>
+        <text>Short%20indication</text>
+      </controlProperties>
+    </control>
+    <control controlID="1711" controlTypeID="com.balsamiq.mockups::TextInput" x="286" y="242" w="500" h="-1" measuredW="79" measuredH="29" zOrder="26" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text/>
+      </controlProperties>
+    </control>
+    <control controlID="1712" controlTypeID="com.balsamiq.mockups::TextArea" x="287" y="339" w="498" h="299" measuredW="200" measuredH="140" zOrder="27" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>The%20code%20content.</text>
+      </controlProperties>
+    </control>
+    <control controlID="1713" controlTypeID="com.balsamiq.mockups::Label" x="287" y="286" w="-1" h="-1" measuredW="133" measuredH="29" zOrder="28" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>16</size>
+        <text>Share%20this%20code%3A</text>
+      </controlProperties>
+    </control>
+    <control controlID="1714" controlTypeID="com.balsamiq.mockups::Label" x="287" y="315" w="-1" h="-1" measuredW="82" measuredH="20" zOrder="29" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>10</size>
+        <text>Short%20indication</text>
+      </controlProperties>
+    </control>
+    <control controlID="1715" controlTypeID="com.balsamiq.mockups::Label" x="287" y="660" w="-1" h="-1" measuredW="93" measuredH="29" zOrder="30" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>16</size>
+        <text>Description</text>
+      </controlProperties>
+    </control>
+    <control controlID="1716" controlTypeID="com.balsamiq.mockups::Label" x="287" y="689" w="-1" h="-1" measuredW="82" measuredH="20" zOrder="31" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>10</size>
+        <text>Short%20indication</text>
+      </controlProperties>
+    </control>
+    <control controlID="1717" controlTypeID="com.balsamiq.mockups::TextArea" x="287" y="709" w="504" h="188" measuredW="200" measuredH="140" zOrder="32" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Description%20of%20the%20code....</text>
+      </controlProperties>
+    </control>
+    <control controlID="1718" controlTypeID="com.balsamiq.mockups::ComboBox" x="287" y="912" w="-1" h="-1" measuredW="175" measuredH="25" zOrder="33" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>What%20language%20is%20this%3F</text>
+      </controlProperties>
+    </control>
+    <control controlID="1719" controlTypeID="com.balsamiq.mockups::Label" x="477" y="917" w="-1" h="-1" measuredW="82" measuredH="20" zOrder="34" locked="false" isInGroup="-1">
+      <controlProperties>
+        <size>10</size>
+        <text>Short%20indication</text>
+      </controlProperties>
+    </control>
+    <control controlID="1720" controlTypeID="com.balsamiq.mockups::TextInput" x="293" y="988" w="493" h="-1" measuredW="67" measuredH="29" zOrder="35" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Tags....</text>
+      </controlProperties>
+    </control>
+    <control controlID="1721" controlTypeID="com.balsamiq.mockups::Tooltip" x="798" y="1002" w="546" h="124" measuredW="676" measuredH="63" zOrder="36" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>When%20the%20user%20starts%20writing%20tags%2C%20I%20will%20make%20an%20Ajax%20call%20to%20display%20the%20list%20of%20related%20tags.%20%0APlease%20take%20a%20look%20at%20how%20StackOverflow%20handles%20this.%20Basically%2C%20they%20have%20some%20sort%20of%20list%20of%20tags%0Athat%20is%20displayed%20underneath%20thi%20textbox%20in%20the%20form%20of%20dropdown%20list.</text>
+      </controlProperties>
+    </control>
+    <control controlID="1722" controlTypeID="com.balsamiq.mockups::Button" x="650" y="1061" w="-1" h="-1" measuredW="136" measuredH="28" zOrder="37" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Propose%20this%20code%21</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>
