@@ -1,16 +1,16 @@
 class UserMailer < ActionMailer::Base
-  default :from => "amokrane.chentir@gmail.com"
+  default :from => "admin@OhTheCode!.com"
 
   def welcome_email user
   		@user = user
 		if !user.nickname.nil?
 			mail(:to => user.email,
-			 	 :from => '"Amokrane from Hello Code" <amokrane.chentir@gmail.com>',
-			 	 :subject => "Hello #{@user.nickname}, welcome to Hello Code!")
+			 	 :from => '"Amokrane from OhTheCode!" <admin@OhTheCode!.com>',
+			 	 :subject => "Hello #{@user.nickname}, welcome to OhTheCode!!")
 	 	else
 	 		mail(:to => user.email,
-			 	 :from => '"Amokrane from Hello Code" <amokrane.chentir@gmail.com>',
-			 	 :subject => "Hello #{@user.email}, welcome to Hello Code!")
+			 	 :from => '"Amokrane from OhTheCode!" <admin@ohthecode.com>',
+			 	 :subject => "Hello #{@user.email}, welcome to OhTheCode!!")
 
 		end
 	end
@@ -19,11 +19,11 @@ class UserMailer < ActionMailer::Base
 		@user = user
 		if !user.nickname.nil?
 			mail(:to => user.email,
-			 	 :from => '"Amokrane from Hello Code" <amokrane.chentir@gmail.com>',
+			 	 :from => '"Amokrane from OhTheCode!" <admin@ohthecode.com>',
 			 	 :subject => "#{@user.nickname}, your code has been selected!")
 	 	else
 	 		mail(:to => user.email,
-			 	 :from => '"Amokrane from Hello Code" <amokrane.chentir@gmail.com>',
+			 	 :from => '"Amokrane from OhTheCode!" <admin@ohthecode.com>',
 			 	 :subject => "#{@user.email}, your code has been selected!")
 		end
 	end
@@ -33,11 +33,11 @@ class UserMailer < ActionMailer::Base
 		@code = code
 		if !user.nickname.nil?
 			mail(:to => user.email,
-			 	 :from => '"Amokrane from Hello Code" <amokrane.chentir@gmail.com>',
+			 	 :from => '"Amokrane from OhTheCode!" <admin@ohthecode.com>',
 			 	 :subject => "#{@user.nickname}, go read the code of the day!")
 	 	else
 	 		mail(:to => user.email,
-			 	 :from => '"Amokrane from Hello Code" <amokrane.chentir@gmail.com>',
+			 	 :from => '"Amokrane from OhTheCode!" <admin@ohthecode.com>',
 			 	 :subject => "#{@user.email}, go read the code of the day")
 		end
 	end
@@ -49,11 +49,11 @@ class UserMailer < ActionMailer::Base
 		@code = code
 		if !user.nickname.nil?
 			mail(:to => @to_email,
-			 	 :from => '"Amokrane from Hello Code" <amokrane.chentir@gmail.com>',
+			 	 :from => '"Amokrane from OhTheCode!" <admin@ohthecode.com>',
 			 	 :subject => "#{@to_name}, #{@user.nickname} wanted to share a beautiful code with you today!")
 	 	else
 	 		mail(:to => @to_email,
-			 	 :from => '"Amokrane from Hello Code" <amokrane.chentir@gmail.com>',
+			 	 :from => '"Amokrane from OhTheCode!" <admin@ohthecode.com>',
 			 	 :subject => "#{@to_name}, #{@user.email} wanted to share a beautiful code with you today!")
 		end
 	end
