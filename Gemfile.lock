@@ -55,7 +55,7 @@ GEM
     curb-fu (0.6.0)
       curb (>= 0.5.4.0)
       rack-test (>= 0.2.0)
-    daemons (1.0.10)
+    daemons (1.1.0)
     database_cleaner (0.6.7)
     delayed_job (2.1.4)
       activesupport (~> 3.0)
@@ -206,6 +206,7 @@ DEPENDENCIES
   capybara
   cucumber-rails
   curb-fu
+  daemons (= 1.1.0)
   database_cleaner
   delayed_job
   devise

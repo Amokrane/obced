@@ -12,7 +12,7 @@ gem 'pg'
 gem 'omniauth', '~> 0.2.6'
 gem 'rubycurl'
 gem 'curb-fu' 
-
+gem 'daemons', '1.1.0'
 group :test, :development do
 	gem 'rspec-rails', '~>2.3'
 end
