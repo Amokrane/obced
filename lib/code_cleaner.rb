@@ -10,7 +10,7 @@ module Jobs
 			abcs = ActiveRecord::Base.configurations
       		ActiveRecord::Base.establish_connection(abcs[::Rails.env])
       		begin
-      			active_codes = Code.where(:code_state_id => 1)
+      			active_codes = Code.where(:code_state_id => CodeState::ACTIVE)
                         active_codes.each do |ac|
                               if Time.now > ac.created_at + 3.days
                                     ac.code_state = CodeState.find_by_name("Inactive")

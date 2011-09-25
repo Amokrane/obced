@@ -1,25 +1,64 @@
-<body>
-	<%= image_tag("github_logo.png") %> <br/>
 
-	
-	<% if current_user %>
-		  <% if current_user.nickname %>
-				<%= "You are signed in as #{current_user.nickname}" %> <br/>
-			<% else %>
-				<%= "You are signed in as #{current_user.email}" %> <br/>
-			<% end %>	
-			<%= link_to 'Logout', destroy_user_session_path %>  <br/>
-	<% else %>
-			<%= link_to 'Login', new_user_session_path %> <br/>
-			<%= link_to 'Or login via Twitter', '/auth/twitter' %> <br/>
-	<% end %>
-	
-	<% if current_user %>
-		<%= link_to 'Active codes', codes_path %> | <br/>
-		<%= link_to 'Propose your most beautiful code', new_code_path %> | <br/>
-		<%= link_to 'Tags', tags_path %> | <br/>
-	<% end %>
-	<%= link_to 'Home', root_path %> | <br/> 
-	<%= link_to 'Archives', archives_path %> | <br/> 
-	
-</body>
+<% if current_user %>
+	<div id="toolbar">
+		<div id="toolbar-content">
+			<div id="user-bar">
+				<p>
+					<!-- TODO GHISLAINE: remove the &nbsp; and put a padding somewhere -->
+					<strong> Welcome </strong> &nbsp;
+					<%= link_to current_user.nickname, user_path(current_user) %>
+				</p>
+				<%= link_to "Log Out", destroy_user_session_path, :id => 'logout' %> 
+			</div>
+		</div>
+	</div>
+<% end %>
+
+
+<%=
+	if !current_user
+ 		link_to "Sign In", new_user_session_path     
+ 		link_to "Sign In via Twitter", '/auth/twitter' 
+	end
+%>
+
+<div class="bodywrap homepage">
+<!-- header -->
+	<div class="header-wrap">
+		<div class="header">
+			<div class="logo">
+				<a href="index.html">	
+					<%= 
+						image_tag("logo.png", 
+								 	:alt => "C3 Clean Glassy Corporate",
+								 	:width => "547", 
+								 	:height => "34", 
+								 	:border => "0") 
+				 	%>
+				 </a>
+			</div>
+             
+             <div class="topmenu">
+    			<ul>
+    				<li>
+                  		<span> <%= link_to 'Home', :root, :class => "active" %> </span>
+          			</li>
+
+                  	<li>
+              			<span> <%= link_to 'Users', users_path %> </span>
+          			</li>
+
+                  	<li>
+              			<span> <%= link_to 'Active Codes', codes_path %> </span>
+          			</li>
+
+                  	<li>
+                  		<span> <%= link_to 'Archive', archives_path  %> </span>
+              		</li>
+                </ul>
+    			<div class="clear">
+    			</div>
+			</div>
+		</div>
+    </div> 
+

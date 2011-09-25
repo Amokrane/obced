@@ -1,7 +1,7 @@
 Feature: Selecting Code
 	In order to be able view the code of the day
 	As a Code
-	I should be selected if I have the more votes
+	I should be selected if I have the most number of votes
 
 
 Background:
@@ -12,6 +12,8 @@ Background:
 Scenario: Selecting code of the day
 	Given it is the ending of the voting day
 	Then there should be 1 entries in "Delayed::Job"
+	And there should be 2 entries in "Code"
 	Given jobs are being dispatched
-	Then there should be 0 entries in "Delayed::Job"
+	Then there should be 2 entries in "Code"
+	And there should be 0 entries in "Delayed::Job"
 	And the code "Using Proc" should be "Selected"

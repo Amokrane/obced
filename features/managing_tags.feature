@@ -5,8 +5,8 @@ Feature: Managing tags
 
 Background:
 	Given there are the following users:
-		| email 					 | password | unconfirmed |
-		| amokrane.chentir@gmail.com | password | false 	  |
+		| nickname | email 					    | password | unconfirmed |
+		| Amokrane | amokrane.chentir@gmail.com | password | false 	     |
 	And I am signed in as them
 
 Scenario: Add tags when posting a new code
@@ -16,7 +16,7 @@ Scenario: Add tags when posting a new code
 	And I fill in "Content" with "puts Hello World"
 	And I fill in "Description" with "A simple and beautiful hello world"
 	And I select "Ruby" from "languages-select"
-	And I fill in "Tags" with "ruby hello-world"
+	And I fill in "tags" with "ruby hello-world"
 	And I press "Submit This Shiny Beautiful Code"
 	Then I should see "Code has been submitted."
 	And I should see "ruby"

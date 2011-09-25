@@ -9,9 +9,9 @@ module Jobs
 		def perform
 			abcs = ActiveRecord::Base.configurations
       		ActiveRecord::Base.establish_connection(abcs[::Rails.env])
-      		unless !Code.where(:code_state_id => 2).empty?
+      		unless !Code.where(:code_state_id => CodeState::SELECTED).empty?
   				begin
-	  				selected_code = Code.where(:code_state_id => 1).order("score DESC").first
+	  				selected_code = Code.where(:code_state_id => CodeState::ACTIVE).order("score DESC").first
 	  				#raise selected_code.inspect
 	  				unless selected_code.nil?
 		  				selected_code.selected_at ||= Time.now

@@ -13,5 +13,5 @@
 
 <h1> List of users </h1>
 <% @users.each do |u| %>
-	<%= u.nickname %> <br/>
+	<%= link_to u.nickname, user_path(u) %> <br/>
 <% end %>

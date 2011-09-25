@@ -9,12 +9,23 @@ development:
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
+
+# The legacy code had the test database setup on postgres. I am commenting this
+# for the moment, until I find out why.
+
+#test: &test
+#  adapter: postgresql
+#  database: obcedtest
+#  host: localhost
+#  username: obceduser
+#  password: obceddb
+
 test: &test
-  adapter: postgresql
-  database: obcedtest
-  host: localhost
-  username: obceduser
-  password: obceddb
+  adapter: sqlite3
+  database: db/test.sqlite3
+  pool: 5
+  timeout: 5000
+
 
 production:
   adapter: sqlite3

@@ -1,6 +1,7 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.0.5'
+gem 'rake', '0.8.7'
 gem 'sqlite3'
 gem 'devise'
 gem 'mongrel', '1.2.0.pre2'
@@ -9,7 +10,7 @@ gem 'meta_search'
 gem 'delayed_job'
 gem 'kramdown', '~> 0.13.3'
 gem 'pg'
-gem 'omniauth'
+gem 'omniauth', '~> 0.2.6'
 gem 'rubycurl'
 gem 'curb-fu' 
 

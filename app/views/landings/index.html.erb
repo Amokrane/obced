@@ -1,57 +1,209 @@
 <script type="text/javascript" src="http://platform.twitter.com/widgets.js">
 </script>
 
-<% @selected_codes.each do |sc| %>
-<h1> The code of the day is: </h1>
-	<% @twitter_text = "OH: what a beautiful code #{code_url(sc)} (via @ohthecode)" %>
-	<a href="http://twitter.com/share"  class="twitter-share-button" 
-	data-text="<%= @twitter_text %>" 
-	data-url="none" 
-	data-count="none"> Tweet this code </a>
+<% @code = @selected_codes.first %>
+	
+<div class="container"> 
+	<div id="codeoftheday">			
+		<h1> The code of the day is </h1>
 
-	<p> Author:
-	<% if !sc.user.nil? %>
-		<%= sc.user.email %>
-	<% else %>
-		<%= "Unknown User" %> </p>
-	<% end %>
+		
+		<div id="code-header">
+    		<h2> <%= @code.title %> </h2>
+    		<h3> Uploaded by: <%= link_to "#{@code.user.nickname}", user_path(@code.user) %> </h3>
+  		</div>
+                                
+      	<div class="code-box">
+    		<div class="code-box-content">
+    			<pre>
+    				<!-- How to put the size of the font inline -->
+    				<code>
+                      	<%= sanitize Kramdown::Document.new(@code.content).to_html  %>
+					</code>
+				</pre>
+      		<%= link_to 'Read more about this code now!', code_path(@code) %>
+      </div>        
+</div>
+                    
+</div>
+<!-- codeoftheday -->
+<div class="clear"></div>
+		<h2 class="howitworks">How it works</h2>
+	<!-- middle -->
 
-	<p> Title:
-	<%= sc.title %> </p>
+	   <div class="middle">
+	   		<div id="topslider" class="tabs-bottom">
+    		<ul>
+				<li class="first"><a href="#fragment-1" ><span> 1</span></a></li>
+	    		<li><a href="#fragment-2" ><span> 2</span></a></li>
+	    		<li><a href="#fragment-3" ><span>3</span></a></li>
+	    		<li><a href="#fragment-4" ><span> 4</span></a></li>
+			</ul>
+	    	<div id="fragment-1">
+	          	<div class="left-text" id="text-1">
+	    			<div class="slide-title">
+	    				You are a very talented developer and you just wrote a very beautiful code
+	    				<img src="images/flick.gif" /> 
+					</div>
+				</div>
 
-	<p> Language:
-	<% if !sc.language.nil? %>
-		<%= sc.language %>
-	<% else %> 
-		<%= "Unknown language" %></p>
-	<% end %>
+				<div class="right-text"> <img src="images/img-3.png" width="660" height="384" alt="" /> 
+				</div>
 
-	<p> Code:
-	<%= sanitize Kramdown::Document.new(sc.content).to_html %> </p>
+	            <div class="clear">
+	            </div>
+	        </div>
 
-	<% if !sc.description.nil? %>
-		<p> Description:
-		<%= sc.description %> </p>
-	<% end %>
+	    	<div id="fragment-2">
+	            <div class="left-text" id="text-2">
+	            	<div class="slide-title">
+	            			You share it<img src="images/flick.gif" />
+	    			</div>
+	      		</div>
+	            
+	            <div class="right-text"> <img src="images/img-2.png" width="660" height="384" alt="" /> 
+	            </div>
 
-	<br/>
-	<% if !current_user.nil? %>
-		<h2> Do you want to share this code by email? </h2>
-		<%= form_tag({:action => "share_by_email", :controller => :codes, 
-					  :code_id => sc.id}) do  %>
-			<p><%= label_tag :to_email, "His/Her email" %>
-				<%= text_field_tag :to_email, params[:to_email] %> </p>
+	            <div class="clear">
+	            </div>
 
-			<p><%= label_tag :to_name, "His/Her name" %>
-				<%= text_field_tag :to_name, params[:to_name] %> </p>
+	        </div>
 
-				<%= hidden_field_tag "current_user", current_user.id %>
-			<%= submit_tag "Send email" %>
-			<br/>
-		<% end %>	
-	<% end %>
+	    	<div id="fragment-3">
+	            <div class="left-text" id="text-3">
+	            	<div class="slide-title">
+	            		Other talented developers browse the codes that have been shared by you 
+	            		and your peers and decide on which code is beautiful by voting on them.
+	            		<img src="images/flick.gif" /></div>
+	          		</div>
 
-<% end %>
+	      		<div class="right-text"> <img src="images/img-4.png" width="660" height="384" alt="" /> 
+	      		</div>
 
+	      		<div class="clear">
+	      		</div>	
+	        </div>
+
+
+	    	<div id="fragment-4">
+	    		<div class="left-text"  id="text-4">
+	            	<div class="slide-title">
+	            		If it is your code that gets the most number of votes it will be featured 
+	            		on the homepage, and archived on the website forever!
+	            		<img src="images/flick.gif" />
+	        		</div>
+	      		</div>
+
+	          <div class="right-text"> 
+	          	<img src="images/img-3.png" width="660" height="384" alt="" /> 
+	          </div>
+
+	          <div class="clear"></div>
+	        </div>
+
+	    	<div class="clear"></div>
+	  		</div>
+	              
+	      	<!-- top-slider -->
+	      	<div class="clear"></div>
+	              
+	      	<!-- content -->
+	              
+	      	<div class="wrapper">
+	      		<div class="content">
+	      			<div class="feat-box" id="box-left">
+	      				<h2>Have some free time, during lunch for instance? </h2>
+	      				<div class="box-text">
+	                      <p>Browse all the codes that have been pushed to the web site and give them a shout!</p>
+	                      <a href="#" >Browse the Codes</a> 
+	                    </div>
+	    			<div class="clear">
+	    			</div>
+
+	    			<div class="home-list">
+	        			<h4>Recent Codes</h4>
+	        			<ul class="recent">
+	        				<li>
+	            				<h5><a href="code-page.html">Responsive-Design-Testing</a></h5>
+	            				<a href="code-page.html">John Doe</a>
+	            				<p>A simple HTML page to test out your responsive web design</p>
+	        				</li>
+
+	        				<li>
+	            				<h5><a href="code-page.html">Responsive-Design-Testing</a></h5>
+	            				<a href="code-page.html">John Doe</a>
+	            				<p>A simple HTML page to test out your responsive web design</p>
+	        				</li>
+
+	        				<li>
+	            				<h5><a href="code-page.html">Responsive-Design-Testing</a></h5>
+	            				<a href="code-page.html">John Doe</a>
+	            				<p>A simple HTML page to test out your responsive web design</p>
+	        				</li>
+
+	        				<li class="last">
+	            				<h5><a href="code-page.html">Responsive-Design-Testing</a></h5>
+	            				<a href="code-page.html">John Doe</a>
+	            				<p>A simple HTML page to test out your responsive web design</p>
+	        				</li>
+	        			</ul>
+	        		</div>
+	      </div>
+	                 
+	       <div class="feat-box"
+	       id="box-right">
+	        <h2>Have some free time, during lunch for instance? </h2>
+	        <div class="box-text">
+	        	<p>Browse all the codes that have been pushed to the web site and give them a shout!</p>
+	        	<a href="#" >Browse the Codes</a> 
+	         </div>
+
+	        <div class="clear">
+	        </div>
+
+	        <div class="home-list">
+	        	<h4>Top Users</h4>
+	        	<ul class="top">
+	            	<li> 
+	            		<img src="images/small-avatar.png" />
+	            		<h5><a href="user-profile.html">John Doe</a></h5>
+	            		<p>Rouen, France</p>
+	            		<span class="score">12345</span>
+	            	</li>
+	            
+	            	<li> 
+	            		<img src="images/small-avatar.png" />
+	            		<h5><a href="user-profile.html">John Doe</a></h5>
+	            		<p>Rouen, France</p>
+	            		<span class="score">12345</span>
+	            	</li> 
+
+	            	<li> 
+	            		<img src="images/small-avatar.png" />
+	            		<h5><a href="user-profile.html">John Doe</a></h5>
+	            		<p>Rouen, France</p>
+	            		<span class="score">12345</span>
+	            	</li> 
+	            
+	              	<li class="last">
+	             		<img src="images/small-avatar.png" />
+	            		<h5><a href="user-profile.html">John Doe</a></h5>
+	            		<p>Rouen, France</p>
+	            		<span class="score">12345</span>
+	            	</li>
+	        	</ul>
+	        </div>
+	      </div>   
+	    </div>
+    <!--/ content --> 
+  </div>
+  <!--/ wrapper -->
+
+  <div class="clear">
+  </div>
+</div>
+
+<!--/ middle --> 
+</div>
 <br/>
 

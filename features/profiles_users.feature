@@ -12,7 +12,6 @@ Background:
 Scenario: Filling up profile information
 	Given I am on the homepage
 	And I follow "My Profile"
-	And I fill in "user[current_password]" with "password"
 	And I fill in "user_website" with "http://www.chentir.com"
 	And I fill in "user_biography" with "Student, intern & rails developer"
 	And I press "Update"

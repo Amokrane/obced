@@ -5,6 +5,7 @@ Given /^there are the following codes:$/ do |table|
 end
 
 Given /^the code "([^"]*)" should be "([^"]*)"$/ do |code, state|
+	puts "There are #{Code.count} codes..."
 	code = Code.find_by_title(code)
 	code.code_state.should == CodeState.find_by_name(state)
 end

@@ -6,6 +6,7 @@
 
 <%= link_to 'Sort by date', codes_path('criteria' => 'sort_by_date') %> <br/>
 <%= link_to 'Sort by score', codes_path('criteria' => 'sort_by_score') %> <br/>
+<%= link_to 'Sort by popularity', codes_path('criteria' => 'sort_by_popularity') %> <br/>
 
 <%= form_for @search, :url => codes_path, :html => {:method => :get} do |f| %>
 	<%= f.label :language_contains %>

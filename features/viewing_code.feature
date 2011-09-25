@@ -19,5 +19,7 @@ Scenario: Viewing proposed codes
 	And I should see "Using Proc"
 
 Scenario: Viewing selected code
+	Given it is the ending of the voting day
+	And jobs are being dispatched
 	Given I am on the homepage
 	Then I should see "Using Proc"

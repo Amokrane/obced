@@ -10,7 +10,7 @@ module Jobs
 			abcs = ActiveRecord::Base.configurations
       		ActiveRecord::Base.establish_connection(abcs[::Rails.env])
       		begin
-      			selected_code = Code.where(:code_state_id => 2).first
+      			selected_code = Code.where(:code_state_id => CodeState::SELECTED).first
       			selected_code.code_state = CodeState.find_by_name("Archived")
       			selected_code.save
       		rescue => e

@@ -5,8 +5,8 @@ Feature: Searching Code
 
 Background:
    Given there are the following users:
-		| email 					 | password | unconfirmed |
-		| amokrane.chentir@gmail.com | password | false 	  |
+		| nickname | email 					 | password | unconfirmed |
+		| Amokrane | amokrane.chentir@gmail.com | password | false 	  |
    And I am signed in as them
    Given there are the following codes:
    		| title 	  | language | content          	| description              | user_id | score |
