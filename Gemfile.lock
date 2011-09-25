@@ -210,7 +210,6 @@ DEPENDENCIES
   capybara
   cucumber-rails
   curb-fu
-  daemons (= 1.0.10)
   database_cleaner
   delayed_job
   devise
