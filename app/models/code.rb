@@ -13,9 +13,13 @@ class Code < ActiveRecord::Base
 
   # Named scopes
   scope :best, :order => 'score desc'
-  scope :recent, :order => 'created_at desc'
+  scope :recent, :order => 'created_at desc', :limit => 5
   #scope :popular, :include => :comments, :order => ''
 
+  # Validations
+  # Vérifier que la description est fournie ainsi que les titres et contenu
+  validates_presence_of :title, :description, :content
+  
   def tag! tags
     tags = tags.split(" ").map do |tag|
         Tag.find_or_create_by_name(tag) 
