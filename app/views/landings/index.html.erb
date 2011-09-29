@@ -4,6 +4,7 @@
 <% @code = @selected_codes.first %>
 	
 <div class="container"> 
+	<% if !@code.nil? %>
 	<div id="codeoftheday">			
 		<h1> The code of the day is </h1>
 
@@ -23,6 +24,10 @@
 				</pre>
       		<%= link_to 'Read more about this code now!', code_path(@code) %>
       </div>        
+
+      <% else %>
+      <!-- Ghislaine: Display something like: no code here yet. This could be yours! -->
+      <% end %>
 </div>
                     
 </div>
@@ -121,6 +126,7 @@
 	    			</div>
 
 	    			<div class="home-list">
+	    				<% if !@recent_codes.empty? %>
 	        			<h4>Recent Codes</h4>
 	        			<ul class="recent">
 	        				<% @recent_codes.each do |c| %>
@@ -130,8 +136,10 @@
 	            					<p> <%= c.description %> </p>
 	        					</li>
 	        			 	<% end %>
-	        			 	%>
 	        			</ul>
+	        			<% else %>
+	        			<!-- Ghislaine: same here -->
+	        			<% end %>
 	        		</div>
 	      </div>
 	                 
