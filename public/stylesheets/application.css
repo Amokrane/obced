@@ -98,26 +98,32 @@ body {
 	width:996px;
 	margin:0 auto;
 	position:relative;
+
 }
+.container-home {
+	background:url('../images/main-bg.jpg') center top no-repeat;
+}
+
 .bodywrap {
 	height:100%;
-	background:url('../images/body-thin.png') repeat-x top;
 }
 /*--------- header */
 .header-wrap {
-	background: url('../images/toolbar-bg.png') repeat-x bottom;
+	background:#999;
 }
 .header {
 	padding-top:6px;
-	height:160px;
+	height:80px;
 	width:996px;
 	margin:0 auto 0;
 	position:relative;
+	background:#CCC;
 }
 .logo {
-	width:547px;
+	width:380px;
 	margin-top:18px;
-	float:left
+	float:left;
+	background:#333;
 }
 .topmenu {
 	height:75px;
@@ -143,7 +149,7 @@ body {
 	display:block;
 	float:left;
 	height:75px;
-	padding:0 10px
+	padding:0 10px;
 }
 
 .topmenu a span {
@@ -210,19 +216,26 @@ body {
 /*--------- middle layout */
 .middle {
 	background: url('../images/middle-bg.png') repeat-y center;
-	width:996px;
+	width:916px;
 	margin:0 auto;
-	padding:50px 0 40px 0;
+	padding:50px 40px 80px;
 	min-height:400px;
 }
+
 .wrapper {
 	width:100%;
 	float:left;
+	background:#000;
 }
 .content {
 	margin:0 0 0 236px;
 	padding-left:0;
 }
+
+#content {
+	
+}
+
 .text {
 	padding-left:20px;
 	padding-right:20px;
@@ -234,17 +247,8 @@ body {
 	padding-left:20px;
 }
 /*--------- homepage */ 
-.homepage {
-	background:url('../images/main-bg.jpg') 0 20px no-repeat;
-}
-.homepage .header {
-	padding-top:6px;
-	height:80px
-}
 
-
-
-.homepage .middle {
+.middle-home {
 	margin:0 auto;
 	padding:20px 0 40px 0;
 	background:none;
@@ -258,7 +262,7 @@ body {
 	font-size:24px;
 }
 
-.homepage .content {
+.middle-home .content {
 	margin:0 0 0 0;
 	padding:0 0;
 }
@@ -489,8 +493,6 @@ body {
 	
 }
 
-
-
 .home-list h5 a {
 	font-weight:bold;
 }
@@ -516,7 +518,6 @@ body {
 	color:#FFF;
 	font-size:21px;
 	line-height:210px;
-
 	
 }
 
@@ -716,7 +717,6 @@ body {
 	clear:both
 }
 .footer .container {
-	background:url('../images/footer_bg_center.png') center top no-repeat;
 	min-height:220px;
 	padding-top:60px;
 }
@@ -1191,8 +1191,10 @@ a.link-reply:hover {
 	border:1px solid red!important;
 }
 #codeoftheday {
-	height:585px;
-	margin-bottom:20px;
+	height:600px;
+	background:#000;
+	width:996px;
+	margin:0 auto;
 }
 #codeoftheday h1 {
 	font-family: 'Open Sans', sans-serif;
@@ -1202,7 +1204,7 @@ a.link-reply:hover {
 	letter-spacing:2px;
 	font-weight:800;
 	margin-bottom:20px;
-	margin-top:20px;
+	margin-top:0;
 }
 #code-header {
 	background:url('../images/codeofday-header.png') center no-repeat;
@@ -1314,6 +1316,7 @@ pre {
 	height:77px;
 	line-height:75px;
 	font-weight:800;
+	background:#444;
 }
 /* post styles */
 .code {
@@ -1691,4 +1694,12 @@ div.pagination a:active {
 	background: -moz-linear-gradient(top,  #3f91c0,  #72bad9  );
 	background: -webkit-gradient(linear, left top, left bottom,  from(#3f91c0),  to(#72bad9)  );
  filter: progid:DXImageTransform.Microsoft.Gradient(StartColorStr='#3f91c0', EndColorStr='#aad9ec');
+}
+
+
+p.alert {
+	background:#A45;
+	height:40px;
+	padding:0;
+	margin:0;
 }

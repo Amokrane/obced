@@ -1,9 +1,18 @@
 <script type="text/javascript" src="http://platform.twitter.com/widgets.js">
 </script>
 
+<style>
+.middle {
+background:none;
+margin:0 auto;
+padding:0;
+width:100%;
+ }
+</style>
+
 <% @code = @selected_codes.first %>
-	
-<div class="container"> 
+
+<div class="container-home"> 
 	<% if !@code.nil? %>
 		<div id="codeoftheday">			
 			<h1> The code of the day is </h1>
@@ -58,7 +67,7 @@
 			<h2 class="howitworks">How it works</h2>
 		<!-- middle -->
 
-		   <div class="middle">
+		   <div class="middle-home">
 		   		<div id="topslider" class="tabs-bottom">
 	    		<ul>
 					<li class="first"><a href="#fragment-1" ><span> 1</span></a></li>
@@ -136,7 +145,7 @@
 		              
 		      	<!-- content -->
 		              
-		      	<div class="wrapper">
+		      
 		      		<div class="content">
 		      			<div class="feat-box" id="box-left">
 		      				<h2>Have some free time, during lunch for instance? </h2>
@@ -192,8 +201,7 @@
 		      </div>   
 		    </div>
 	    <!--/ content --> 
-	  </div>
-	  <!--/ wrapper -->
+	  
 
 	  <div class="clear">
 	  </div>
