@@ -101,7 +101,7 @@ body {
 
 }
 .container-home {
-	background:url('../images/main-bg.jpg') center top no-repeat;
+	background:url('../images/main-bg.jpg') center  no-repeat;
 }
 
 .bodywrap {
@@ -109,7 +109,8 @@ body {
 }
 /*--------- header */
 .header-wrap {
-	background:#999;
+	background:#1B2539;
+	
 }
 .header {
 	padding-top:6px;
@@ -117,7 +118,6 @@ body {
 	width:996px;
 	margin:0 auto 0;
 	position:relative;
-	background:#CCC;
 }
 .logo {
 	width:380px;
@@ -1192,7 +1192,6 @@ a.link-reply:hover {
 }
 #codeoftheday {
 	height:600px;
-	background:#000;
 	width:996px;
 	margin:0 auto;
 }
@@ -1309,14 +1308,14 @@ pre {
 }
 .howitworks {
 	text-align:center;
-	color:#FFF;
+	color:#39435C;
 	text-transform:uppercase;
 	font-family: 'Open Sans', sans-serif;
 	letter-spacing:2px;
-	height:77px;
-	line-height:75px;
+	height:57px;
+	line-height:55px;
 	font-weight:800;
-	background:#444;
+	background:#ECF0F4;
 }
 /* post styles */
 .code {
@@ -1698,8 +1697,18 @@ div.pagination a:active {
 
 
 p.alert {
-	background:#A45;
+	background:url('../images/dark-trans.png');
 	height:40px;
-	padding:0;
+	padding:10px 40px;
 	margin:0;
+	position:absolute;
+	line-height:40px;
+	bottom:0;
+	color:#FFF;
+}
+
+#no-code {
+	padding:40px;
+	background:#333;
+	text-align:center;
 }
