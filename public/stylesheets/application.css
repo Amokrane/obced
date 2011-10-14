@@ -110,7 +110,7 @@ body {
 /*--------- header */
 .header-wrap {
 	background:#1B2539;
-	
+
 }
 .header {
 	padding-top:6px;
@@ -1191,9 +1191,10 @@ a.link-reply:hover {
 	border:1px solid red!important;
 }
 #codeoftheday {
-	height:600px;
+	height:650px;
 	width:996px;
-	margin:0 auto;
+	margin:0 auto 0;
+	padding-top:50px;
 }
 #codeoftheday h1 {
 	font-family: 'Open Sans', sans-serif;
