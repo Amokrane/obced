@@ -1,9 +1,18 @@
 <script type="text/javascript" src="http://platform.twitter.com/widgets.js">
 </script>
 
+<style>
+.middle {
+background:none;
+margin:0 auto;
+padding:0;
+width:100%;
+ }
+</style>
+
 <% @code = @selected_codes.first %>
-	
-<div class="container"> 
+
+<div class="container-home"> 
 	<% if !@code.nil? %>
 		<div id="codeoftheday">			
 			<h1> The code of the day is </h1>
@@ -30,7 +39,7 @@
      <% else %>
       <!-- Ghislaine: Display something like: no code here yet. This could be yours! -->
       <div id="codeoftheday">			
-			<h1> No code today! </h1>     
+			<h1> No code today!</h1>     
 			
 			<div id="code-header">
 	    		
@@ -38,13 +47,9 @@
 	  		       
       		<div class="code-box">
       			<div class="code-box-content">
-	      			<pre>
-						<!-- How to put the size of the font inline -->
-						<code>
-	                  		<%= sanitize Kramdown::Document.new("This space could be yours!").to_html  %>
-						</code>
-					</pre>
-    			
+      				<div id="no-code">
+	      			<h2>This Space could be yours</h2>
+    				</div>
       				<%= link_to 'Post a code', new_code_path %> 
  	     		</div>
  	    	</div>
@@ -58,7 +63,7 @@
 			<h2 class="howitworks">How it works</h2>
 		<!-- middle -->
 
-		   <div class="middle">
+		   <div class="middle-home">
 		   		<div id="topslider" class="tabs-bottom">
 	    		<ul>
 					<li class="first"><a href="#fragment-1" ><span> 1</span></a></li>
@@ -136,7 +141,7 @@
 		              
 		      	<!-- content -->
 		              
-		      	<div class="wrapper">
+		      
 		      		<div class="content">
 		      			<div class="feat-box" id="box-left">
 		      				<h2>Have some free time, during lunch for instance? </h2>
@@ -192,8 +197,7 @@
 		      </div>   
 		    </div>
 	    <!--/ content --> 
-	  </div>
-	  <!--/ wrapper -->
+	  
 
 	  <div class="clear">
 	  </div>
