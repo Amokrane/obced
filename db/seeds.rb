@@ -6,7 +6,9 @@ seed_users_hash = [{"email" => "amokrane.chentir@gmail.com", "password" => "pass
 					"nickname" => "Amokrane", "website " => "http://www.chentir.com", 
 					"biography" => "Programmer"},{"email" => "me@ghislaineguerin.com", "password" => "password", 
 					"nickname" => "Ghislaine", "website " => "http://www.ghislaineguerin.com", 
-					"biography" => "Designer"}]
+					"biography" => "Designer"}, {"email" => "chentir@poste.isima.fr", "password" => "password", 
+					"nickname" => "Chentir", "website " => "http://www.isima.fr", 
+					"biography" => "Student"}, ]
 
 seed_users_hash.each do |attributes|
   	User.create!(
@@ -21,7 +23,11 @@ seed_codes_hash = [{"title" => "HelloWorld_C", "language" => "C", "content" => "
  {"title" => "HelloWorld_Ruby", "language" => "Ruby", "content" => "```ruby\r\nputs \"Hello World!\"\r\n```", 
 	 "description" => "Hello World In Ruby", "user_id" => User.find_by_email("amokrane.chentir@gmail.com").id},  
  {"title" => "HelloWorld_JavaScript", "language" => "JavaScript", "content" => "```ruby\r\nputs \"Hello World!\"\r\n```", 
-	 "description" => "Hello World in JavaScript", "user_id" => User.find_by_email("amokrane.chentir@gmail.com").id}]
+	 "description" => "Hello World in JavaScript", "user_id" => User.find_by_email("amokrane.chentir@gmail.com").id},
+	{"title" => "HelloWorld_C#", "language" => "C#", "content" => "```ruby\r\nputs \"Hello World!\"\r\n```", 
+	"description" => "Hello World In C#", "user_id" => User.find_by_email("chentir@poste.isima.fr").id},
+{"title" => "HelloWorld_ObjC", "language" => "ObjC", "content" => "```ruby\r\nputs \"Hello World!\"\r\n```", 
+	"description" => "Hello World In Objective-C", "user_id" => User.find_by_email("me@ghislaineguerin.com").id}]
 
 
 seed_codes_hash.each do |attributes|
