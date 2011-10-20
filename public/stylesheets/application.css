@@ -1713,3 +1713,13 @@ p.alert {
 	background:#333;
 	text-align:center;
 }
+
+.sidebar {
+	background:#000;
+	width:300px;
+	float:left;
+}
+
+.content-col {
+	margin-left:340px;
+}

@@ -26,11 +26,14 @@
 
 		<div id ="content">
 			<div class="middle">
+				<%= render 'shared/sidebar' %>
+				<div class="content-col">
 				<%= yield %>
+				</div>
 			</div>	
+	
 		</div>
 
-		<%= render 'shared/sidebar' %>
 
 		<%= render 'shared/footer' %>
 	</body>
