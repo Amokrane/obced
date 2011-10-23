@@ -16,22 +16,24 @@
 	});
 </script>
 
-<%= link_to "Share one of my Gists instead", import_gist_codes_path %> <br/>
+<h1 class="page-title">Post a Code</h1>
+
+<%= link_to "Share one of my Gists instead", import_gist_codes_path, :id => "share-gists" %>
 
 <%= form_for(@code) do |f| %>
-	<%= f.label :title %> <br/>
+	<%= f.label :title %> 
 	<%= f.text_field :title %> <br/> <br/>
 
-	<%= f.label :content %> <br/>
+	<%= f.label :content %> 
 	<%= f.text_area :content %> <br/><br/>
 
-	<%= f.label :language, "languages-select" %> <br/>
+	<%= f.label :language, "languages-select" %> 
 	<%= f.select :language, options_for_select([['Ruby', 'Ruby'], ['C++', 'C++']]), :id => "languages-select" %> <br/> <br/>
 
-	<%= f.label :description %> <br/>
+	<%= f.label :description %> 
 	<%= f.text_area :description %> <br/> <br/>
 	
-	<%= label_tag :tags %> <br/>
+	<%= label_tag :tags %> 
 	<%= text_field_tag :tags, params[:tags], {:id => "tagnames"} %> <br/> <br/>
 	
 	<div id ="tag-preview" style="display: block;">

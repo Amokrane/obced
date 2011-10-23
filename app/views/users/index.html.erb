@@ -2,15 +2,6 @@
 <%= link_to 'Sort by score', users_path('criteria' => 'sort_by_score') %> <br/>
 <br/>
 
-<style>
-.sidebar {
-	display:none;
-}
-.content-col {
-	margin-left:0;
-}
-</style>
-
 <h1> Search a user </h1>
 <%= form_for @search, :url => users_path, :html => {:method => :get} do |f| %>
 	<%= f.label :nickname_contains %>

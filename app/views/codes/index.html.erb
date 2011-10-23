@@ -1,35 +1,42 @@
-<%= link_to 'New Code', new_code_path %> <br/>
-<%= link_to 'My Profile', edit_user_registration_path %> <br/>
-<%= link_to 'users', users_path %> <br/>
+<h1 class="page-title">Lorem Ipsum</h1>
 
-<!-- # <%= link_to 'Sort by date', codes_path('criteria' => 'sort_by_date') %> <br/>
-# <%= link_to 'Sort by score', codes_path('criteria' => 'sort_by_score') %> <br/>
-# <%= link_to 'Sort by popularity', codes_path('criteria' => 'sort_by_popularity') %> <br/>
+<%= render 'shared/sidebar' %>
+
+<div class="content-col">
+
+<!-- # <%= link_to 'Sort by date', codes_path('criteria' => 'sort_by_date') %>
+# <%= link_to 'Sort by score', codes_path('criteria' => 'sort_by_score') %>
+# <%= link_to 'Sort by popularity', codes_path('criteria' => 'sort_by_popularity') %>
  -->
-
 
 <%= form_for @search, :url => codes_path, :html => {:method => :get} do |f| %>
 	<%= f.label :language_contains %>
 	<%= f.text_field :language_contains, { :id => "search-by-language" } %>
 	<%= f.submit %>
 <% end %>
-<br/> <br/>
 
-<p>
+
 	<% @codes.each do |c| %>
-		<% if !c.user.nil? %>
-			<%= "Author=#{c.user.email}" %> <br/>
-		<% end %>
-		<%= button_to "Up", code_vote_up_path(:code_id => c.id) %>
-		<%= button_to "Down", code_vote_down_path(:code_id => c.id) %>
-		<%= "Score=#{c.score}" %> <br/>
-		<p> Title=
-		<%= link_to "#{c.title}", code_path(c), :id => 'code' %> <p/>
-		<p> Content = 
-		<%= sanitize Kramdown::Document.new(c.content).to_html %> </p>
-		<%= "Description=#{c.description}" %> <br/> 
-		----
-		<br/>
-	<% end %>
-</p>
 
+	<div class="code-post">
+		<h2>Title=<%= link_to "#{c.title}", code_path(c), :id => 'code' %></h2>
+		<p class="author">
+		<% if !c.user.nil? %>
+			<%= "Author=#{c.user.email}" %>
+		<% end %>
+		</p>
+		<div class="code-content">
+			<div class="code-voting">
+				<%= button_to "Up", code_vote_up_path(:code_id => c.id), { :class => "button-up" } %>
+				<span class="voting-score"><%= "Score=#{c.score}" %></span>
+				<%= button_to "Down", code_vote_down_path(:code_id => c.id), { :class => "button-down" } %>	
+			</div>
+		Content = 
+		<%= sanitize Kramdown::Document.new(c.content).to_html %> </div>
+		<div class="code-description">
+		<%= "Description=#{c.description}" %> 
+		</div>
+	</div>
+	<% end %>
+
+</div>

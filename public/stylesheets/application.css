@@ -118,6 +118,7 @@ body {
 	width:996px;
 	margin:0 auto 0;
 	position:relative;
+	background:url('../images/header-top.png') no-repeat 0 60px;
 }
 .logo {
 	width:380px;
@@ -216,9 +217,9 @@ body {
 /*--------- middle layout */
 .middle {
 	background: url('../images/middle-bg.png') repeat-y center;
-	width:956px;
+	width:916px;
 	margin:0 auto;
-	padding:50px 40px 80px 0;
+	padding:20px 40px 80px 40px;
 	min-height:400px;
 }
 
@@ -719,6 +720,7 @@ body {
 .footer .container {
 	min-height:220px;
 	padding-top:60px;
+	background: url('../images/footer_bg_center.png') no-repeat top;
 }
 
 .homepage .footer .container {
@@ -1715,11 +1717,126 @@ p.alert {
 }
 
 .sidebar {
-	background:#000;
+	background:#ccc;
 	width:240px;
 	float:left;
+
+}
+
+ul.sidebar-nav li{
+	margin:0 0 10px;
+}
+
+ul.sidebar-nav li a{
+	padding:10px;
+	display:block;
 }
 
 .content-col {
 	margin-left:280px;
 }
+
+h1.page-title {
+	background:#CCC;
+	margin:0 0 20px 0;
+	text-align:center;
+	
+}
+
+form.new_code {
+	background:#C7D1DB;
+	padding:40px;
+	width:500px;
+	margin:0 auto;
+}
+
+form.new_code label {
+	position:absolute;
+	background:#FFF;
+	padding:10px;
+	font-weight:bold;
+}
+
+form.new_code input, form.new_code textarea {
+	border:none;
+	padding:50px 10px 20px;
+	width:480px;
+	margin:0 0 10px 0;
+
+}
+
+a#share-gists {
+	background:#333;
+	padding:10px;
+	display:block;
+	margin-bottom:20px;
+}
+
+form.new_code select {
+	margin-left:150px;
+	padding:10px;
+	border:none;
+	background:#444;
+	
+}
+
+input#code_submit {
+	width:300px;
+	text-align:center;
+	padding:10px;
+	margin:0 auto;
+	display:block;
+}
+
+form.code_search {
+	background:#ccc;
+	padding:10px;
+	margin:0 0 20px;
+	
+}
+
+.code-post {
+	margin:0 0 10px;
+	
+}
+
+.code-content {
+	margin:0 0 10px;
+	padding:20px;
+	background:#E6E8EC;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+}
+
+p.author {
+	margin:0 0 10px;
+}
+
+.code-voting {
+	background:#444;
+	width:80px;
+	float:right;
+}
+
+.voting-score {
+	text-align:center;
+	width:80px;
+	display:block;
+}
+
+input.button-up {
+	border:none;
+	width:80px;
+	cursor:pointer;
+}
+
+input.button-down {
+	border:none;
+	width:80px;
+	cursor:pointer;
+}
+
+a#code {
+}
+
