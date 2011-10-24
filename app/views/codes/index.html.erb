@@ -31,8 +31,11 @@
 				<span class="voting-score"><%= "Score=#{c.score}" %></span>
 				<%= button_to "Down", code_vote_down_path(:code_id => c.id), { :class => "button-down" } %>	
 			</div>
-		Content = 
-		<%= sanitize Kramdown::Document.new(c.content).to_html %> </div>
+			<div class="code-post-box">
+			Content = 
+			<%= sanitize Kramdown::Document.new(c.content).to_html %> 
+			</div>
+		</div>
 		<div class="code-description">
 		<%= "Description=#{c.description}" %> 
 		</div>

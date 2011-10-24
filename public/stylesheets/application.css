@@ -855,154 +855,7 @@ body {
 	padding:10px 0;
 	border-bottom:1px solid #e3e3e4
 }
-/* profile style */
 
-.light .profile-box-content {
-	background:none;
-}
-.light .profile-box-title {
-	background:none;
-	margin:0;
-	padding:0;
-
-}
-.light h2 {
- text-align:left;
- margin-bottom:20px;
- font-size:16px;
-}
-.profile-columns .col-1 {
-	float:left;
-	width:280px;
-	margin:0 20px;
-}
-.profile-box {
-	width:280px;
-	min-height:386px;
-	color:#6c7689;
-	margin-bottom:20px;
-}
-.profile-box-content {
-	background:url('../images/black_box_bg.png') bottom no-repeat;
-	padding-bottom:37px;
-}
-.profile-box-title {
-	height:61px;
-	text-align:center;
-	color:#FFF;
-	line-height:61px;
-	background:url('../images/black_box_bg_top.png') 0 0 no-repeat;
-	overflow:hidden
-}
-.profile-box-title h2 {
-	color:#FFF;
-	font-size:24px;
-	padding-top:12px;
-	font-family: 'Tienne', serif;
-}
-.profile-box-intro {
-	height:100px;
-	font-size:13px;
-	padding:10px 20px 0;
-	color:#fff;
-}
-.profile-box-score {
-	font-size:16px;
-	padding:10px 5px 10px 5px;
-	background:#999;
-	margin-bottom:10px;
-	text-align:center;
-	color:#FFF;
-}
-.profile-box-photo {
-	text-align:center;
-}
-.profile-box-photo img {
-}
-.profile-box-list {
-	min-height:176px
-}
-.profile-box-list li {
-
-	display:block;
-	padding:0;
-	overflow:hidden;
-	border-bottom:1px solid #CEE1ED;
-	margin-bottom:20px;
-}
-
-
-.profile-box-list li h5 a {
-	font-size:16px;
-	font-weight:bold;
-	margin:0;
-
-}
-
-.profile-box-list li p {
-	margin:5px 0 10px 0;
-	
-
-}
-
-.profile-box-list .active {
-	background:url('../images/ico-check.gif') 238px 8px no-repeat
-}
-.profile-box-list .notactive {
-	background:url('../images/ico-x.gif') 238px 9px no-repeat
-}
-.profile-box-list .even {
-}
-.profile-box-more {
-	height:46px;
-	padding-top:20px;
-	text-align:center
-}
-.profile-box-more a {
-	display:block;
-	width:184px;
-	height:26px;
-	text-align:center;
-	font-size:14px;
-	line-height:24px;
-	margin:auto;
-	font-weight:bold;
-	text-transform:uppercase;
-}
-.light .profile-box-more a {
-	background:none;
-}
-
-.light .profile-box-list li {
-
-	display:block;
-	padding:0;
-	overflow:hidden
-}
-
-
-.icon-box {
-	height:80px;
-	margin-bottom:40px
-}
-.icon-box h3 {
-	font-size:20px;
-	padding-top:15px;
-	font-weight:bold
-}
-.icon-box h3 a {
-	color:#2B90C8
-}
-.ico-signup h3 a {
-	color:#2B90C8
-}
-.icon-img {
-	width:70px;
-	height:80px;
-	overflow:hidden;
-	float:left;
-	margin-right:10px
-}
 /* post styles */
 .post {
 	clear:both;
@@ -1840,3 +1693,23 @@ input.button-down {
 a#code {
 }
 
+.code-post-box {
+	background:#1B2539;
+	height:200px;
+	padding:20px;
+	color:#FFF;
+}
+
+.profile-box {
+	background:#ccc;
+	width:240px;
+	padding:20px;
+	float:left;
+	
+}
+
+.user-codes {
+	float:right;
+	background:#444;
+	width:600px;
+}
