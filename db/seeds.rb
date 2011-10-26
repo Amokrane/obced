@@ -33,3 +33,12 @@ seed_codes_hash = [{"title" => "HelloWorld_C", "language" => "C", "content" => "
 seed_codes_hash.each do |attributes|
   	Code.create!(attributes)
 end
+
+seed_tags_hash = [{"name" => "ruby", "nb_occurences" => "3"},
+				 {"name" => "Java", "nb_occurences" => "10"}, 
+				  {"name" => "C", "nb_occurences" => "1"}, 
+					{"name" => "Scala", "nb_occurences" => "4"}]
+
+seed_tags_hash.each do |attributes|
+	Tag.create!(attributes)
+end
