@@ -21,19 +21,22 @@
 <%= link_to "Share one of my Gists instead", import_gist_codes_path, :id => "share-gists" %>
 
 <%= form_for(@code) do |f| %>
-	<%= f.label :title %> 
+	<%= f.label :title%> 
 	<%= f.text_field :title %> <br/> <br/>
 
-	<%= f.label :content %> 
+	<%= f.label :content, :class => "flag-label"%> 
 	<%= f.text_area :content %> <br/><br/>
 
-	<%= f.label :language, "languages-select" %> 
-	<%= f.select :language, options_for_select([['Ruby', 'Ruby'], ['C++', 'C++']]), :id => "languages-select" %> <br/> <br/>
+<div class="styled-select">
+	<%= f.label :language, "languages-select", :class => "languages-label"%> 
+	
+	<%= f.select :language, options_for_select([['Ruby', 'Ruby'], ['C++', 'C++']]), :id => "languages-select" %> 
+	</div>
 
-	<%= f.label :description %> 
+	<%= f.label :description, :class => "flag-label" %> 
 	<%= f.text_area :description %> <br/> <br/>
 	
-	<%= label_tag :tags %> 
+	<%= f.label :tags , :class => "flag-label" %> 
 	<%= text_field_tag :tags, params[:tags], {:id => "tagnames"} %> <br/> <br/>
 	
 	<div id ="tag-preview" style="display: block;">

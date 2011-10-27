@@ -1590,24 +1590,50 @@ ul.sidebar-nav li a{
 }
 
 h1.page-title {
-	background:#CCC;
 	margin:0 0 20px 0;
 	text-align:center;
 	
 }
 
 form.new_code {
-	background:#C7D1DB;
-	padding:40px;
+	background:url('../images/new-code-bg-top.png') no-repeat center top;
+	padding:40px 140px 100px;
 	width:500px;
 	margin:0 auto;
 }
 
 form.new_code label {
 	position:absolute;
-	background:#FFF;
 	padding:10px;
 	font-weight:bold;
+	font-family: 'Open Sans',sans-serif;
+	text-transform:uppercase;
+	color:#495062;
+}
+
+form.new_code label.flag-label {
+background:url('../images/flag-label.png') no-repeat center top;
+margin-top:10px;
+margin-left:-10px;
+width:100px;
+padding:8px 10px 20px 10px;	
+
+}
+
+form.new_code label.languages-label {
+	height:40px;
+	padding:0 10px;
+	line-height:40px;
+	width:130px;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	background:#FFF url('../images/label-bg.png') repeat-x top;
+	border:1px solid #92A1B0;
+	-moz-box-shadow: 1px 1px 1px #FFF;
+-webkit-box-shadow: 1px 1px 1px  #FFF;
+box-shadow: 1px 1px 1px  #FFF;
+	
 }
 
 form.new_code input, form.new_code textarea {
@@ -1615,7 +1641,43 @@ form.new_code input, form.new_code textarea {
 	padding:50px 10px 20px;
 	width:480px;
 	margin:0 0 10px 0;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+	background:#FFF url('../images/form-shadow.png') repeat-x top;
+	border:1px solid #92A1B0;
+	-moz-box-shadow: 1px 1px 1px #FFF;
+-webkit-box-shadow: 1px 1px 1px  #FFF;
+box-shadow: 1px 1px 1px  #FFF;
 
+
+
+}
+
+.styled-select {
+	height:42px;
+	margin-bottom:25px;
+}
+
+input#code_title {
+	padding:0 0 0 60px;
+	width:440px;
+	height:38px;
+	line-height:38px;
+	font-size:18px;
+}
+
+input#code_submit {
+	background:url('../images/cyan-bg.png') repeat-x top;
+	text-transform:uppercase;
+	color:#FFF;
+	font-weight:bold;
+	font-family: 'Open Sans',sans-serif;
+	width:300px;
+	text-align:center;
+	padding:10px;
+	margin:0 auto;
+	display:block;
 }
 
 a#share-gists {
@@ -1626,20 +1688,23 @@ a#share-gists {
 }
 
 form.new_code select {
-	margin-left:150px;
+	margin-left:180px;
 	padding:10px;
 	border:none;
-	background:#444;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	background:#FFF url('../images/form-shadow.png') repeat-x top;
+	border:1px solid #92A1B0;
+	-moz-box-shadow: 1px 1px 1px #FFF;
+	-webkit-box-shadow: 1px 1px 1px  #FFF;
+	box-shadow: 1px 1px 1px  #FFF;
+	line-height:42px;
 	
 }
 
-input#code_submit {
-	width:300px;
-	text-align:center;
-	padding:10px;
-	margin:0 auto;
-	display:block;
-}
+
+
 
 form.code_search {
 	background:#ccc;
