@@ -10,6 +10,12 @@
 	<div id="profile-box-vote">
 		<%= button_to "Up", user_vote_up_path(:user_id => @user.id) %>
 	</div>
+
+	<% if !current_user.nil? %>
+		<% if current_user.email == @user.email %>
+			<%= link_to 'Edit Profile', edit_user_registration_path(@user) %>
+		<% end %>
+	<% end %>
 </div>
 
 <div class="user-codes">
@@ -20,3 +26,5 @@
 	<% end %>
 	</ul>
 </div>
+
+
