@@ -2,8 +2,6 @@
 
 	<h2> Tags </h2>	
 	<% Tag.all.each do |tag| %>
-		<p> <%= tag.name %> </p>
+		<p> <%= link_to tag.name, codes_path %> </p>
 	<% end %>
-
-	
 </div>
