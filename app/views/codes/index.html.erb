@@ -1,4 +1,4 @@
-<h1 class="page-title">Lorem Ipsum</h1>
+<h1 class="page-title">Active Codes</h1>
 
 <%= render 'shared/sidebar' %>
 
@@ -18,10 +18,10 @@
 	<% @codes.each do |c| %>
 
 	<div class="code-post">
-		<h2>Title=<%= link_to "#{c.title}", code_path(c), :id => 'code' %></h2>
+		<h2><%= link_to "#{c.title}", code_path(c), :id => 'code' %></h2>
 		<p class="author">
 		<% if !c.user.nil? %>
-			<%= "Author=#{c.user.email}" %>
+			<%= "#{c.user.email}" %>
 		<% end %>
 		</p>
 		<div class="code-content">
@@ -30,13 +30,12 @@
 				<span class="voting-score"><%= "Score=#{c.score}" %></span>
 				<%= button_to "Down", code_vote_down_path(:code_id => c.id), { :class => "button-down" } %>	
 			</div>
-			<div class="code-post-box">
-			Content = 
+			<div class="code-post-box"> 
 			<%= sanitize Kramdown::Document.new(c.content).to_html %> 
 			</div>
 		</div>
 		<div class="code-description">
-		<%= "Description=#{c.description}" %> 
+		<%= "#{c.description}" %> 
 		</div>
 	</div>
 	<% end %>
