@@ -26,7 +26,7 @@
 
                 <span><%= @code.score %></span>
                 <div class="downvote">
-                    <%= button_to "", code_vote_down_path(:code_id => @code.id), , :html => {:class => ""} %>
+                    <%= button_to "", code_vote_down_path(:code_id => @code.id), :html => {:class => ""} %>
                 </div>
             </div><!-- end-voting -->
 
