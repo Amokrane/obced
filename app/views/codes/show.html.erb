@@ -7,36 +7,47 @@
 <div class="code">  
 
     <div class="code-title">
-        <h2><a href="#">Code Title</a></h2>
-        <h3>By <a href="#">John Doe</a></h3>
+        <h2><a href="#"><%= @code.title %></a></h2>
+        <h3>By <a href="#"><%= @code.user.nickname %></a></h3>
     </div>
 
     <div class="code-meta">
-    Friday, <span class="blue">April 2, 2010</span> // <a href="#"><strong>Javascript</strong></a>
+    Friday, <span class="blue">April 2, 2010</span> // <a href="#"><strong> <%= @code.language %> </strong></a>
     </div>
 
     <div class="code-entry">
 
         <div class="code-box">
             <div id="voting">
-                <div class="upvote"></div>
-                <span>score</span>
-                <div class="downvote"></div>
+                <div class="upvote">
+                    <!-- @Ghislaine:  The style should be applied to the button instead, no? -->
+                    <%= button_to "", code_vote_up_path(:code_id => @code.id), :html => {:class => ""} %>
+                </div>
+
+                <span><%= @code.score %></span>
+                <div class="downvote">
+                    <%= button_to "", code_vote_down_path(:code_id => @code.id), , :html => {:class => ""} %>
+                </div>
             </div><!-- end-voting -->
 
             <div class="code-box-content">
-                <pre><code></code></pre>
+                <pre>
+                    <%= sanitize Kramdown::Document.new(@code.content).to_html %>
+                    <code> </code>
+                </pre>
             </div>
         </div><!-- end-code-box -->
 
-    <p> Lorem ipsum dolor sit amet enim. Etiam ullamcorper. Suspendisse a pellentesque dui, non felis. Maecenas malesuada elit lectus felis, malesuada ultricies. Curabitur et ligula. Ut molestie a, ultricies porta urna. Vestibulum commodo volutpat a, convallis ac, laoreet enim. Phasellus fermentum in, dolor. Pellentesque facilisis. Nulla imperdiet sit amet magna. Vestibulum dapibus, mauris nec malesuada fames ac turpis velit, rhoncus eu, luctus et interdum adipiscing wisi. Aliquam erat ac ipsum. Integer aliquam purus. Quisque lorem tortor fringilla sed, vestibulum ide...</p>
+    <p> 
+        <%= @code.description %>
+    </p>
 
     <div class="clear"></div>
 
     </div><!-- end-code-entry -->
 
     <div class="code-meta-bot">
-        <a href="post.html" class="link-comments">23 Comments</a>
+        <a href="post.html" class="link-comments"><%= @comments.count unless @comments.nil? %></a>
     </div>
 
 </div>
@@ -47,44 +58,39 @@
 <div class="comment-list">
 <a href="#addcomment" class="btn-more alignright">Add comment</a>
 <h2>Comments</h2>
-<div class="comment-one">
-<div class="comment-box">
-<div class="comment-meta">
-<strong class="author">John Doe</strong> <a href="#" class="link-reply">Reply</a> <br />
-<span class="comment-date">15. Feb, 2011 at 12:30 pm</span>
-</div>
-<div class="comment-text">
-<p>Hi, this is a comment.<br />To delete a comment, just log in and view the post's comments. There you will have the option to edit or delete them.</p>
-</div>
-</div></div>
-<div class="comment-one reply">
-<div class="comment-box">
-<div class="comment-meta">
-<strong class="author">John Doe</strong> <a href="#" class="link-reply">Reply</a> <br />
-<span class="comment-date">15. Feb, 2011 at 12:30 pm</span>
-</div>
-<div class="comment-text">
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-</div>
-</div></div>
-<div class="comment-one">
-<div class="comment-box">
-<div class="comment-meta">
-<strong class="author">John Doe</strong> <a href="#" class="link-reply">Reply</a> <br />
-<span class="comment-date">15. Feb, 2011 at 12:30 pm</span>
-</div>
-<div class="comment-text">
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-</div>
-</div></div>
-</div>
-<!-- comments -->               
 
-        
+<% if !@comments.nil? %>
+    <% @comments.each do |comment| %>
+        <div class="comment-one">
+            <div class="comment-box">
+                <div class="comment-meta">
+                    <strong class="author"><%= comment.user.nickname %> </strong>  <br/>
+                    <span class="comment-date"><%= comment.created_at %> </span>    
+                </div>
+
+                <div class="comment-text">
+                    <p> <%= comment.content %> </p>
+                </div>
+            </div>
+        </div>
+    <% end %>
+<% else %>
+    <div class="comment-text">
+        <p> <%= "No comments posted yet" %> </p>
+    </div>
+<% end %>
+
 
 <!-- comment form -->           
  <div class="comment-form" id="addcomment">
 <h2>Add Comment:</h2>
+
+<%= form_for([@code, @code.comments.build]) do |f| %>
+    <p class="textarea"> <%= f.text_area :content, :html => {:cols => "40", :rows => "10"} %> </p>
+    <p class="btn-send"> <%= f.submit "Send Message" %> </p>
+<% end %>
+
+<!--
 <form action="" method="get">
 <p class="inputtext"><input name="your-name" size="40" type="text" value="enter your name" onfocus="if (this.value == 'enter your name') {this.value = '';}" onblur="if (this.value == '') {this.value = 'enter your name';}" /></p>
 <p class="inputtext"><input name="your-email" class="inputtext" size="40" type="text" value="enter your email" onfocus="if (this.value == 'enter your email') {this.value = '';}" onblur="if (this.value == '') {this.value = 'enter your email';}" /></p>
@@ -94,6 +100,8 @@
 <input value="Send Message" type="submit" /> 
 </p>
 </form>
+-->
+
 <div class="clear"></div>
 </div>  
 

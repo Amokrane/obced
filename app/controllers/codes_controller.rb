@@ -1,4 +1,4 @@
-class CodesController < ApplicationController
+class CodesController < ApplicationController	
 	#before_filter :find_user
 
 	def index
@@ -37,6 +37,7 @@ class CodesController < ApplicationController
 
 	def show
 		@code = Code.find(params[:id])
+		@comments = Comment.where(:code_id => @code.id)
 	end
 
 	def vote_up
@@ -46,7 +47,7 @@ class CodesController < ApplicationController
 		respond_to do |format|
 			if @code.save
 				format.html {
-					redirect_to(codes_path, :notice => "Voted up")
+					redirect_to(code_path(@code), :notice => "Voted up")
 				}
 			else
 				format.html {
@@ -63,7 +64,7 @@ class CodesController < ApplicationController
 		respond_to do |format|
 			if @code.save
 				format.html {
-					redirect_to(codes_path, :notice => "Voted down")
+					redirect_to(code_path(@code), :notice => "Voted down")
 				}
 			else
 				format.html {
