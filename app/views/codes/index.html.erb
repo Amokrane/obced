@@ -9,11 +9,7 @@
 # <%= link_to 'Sort by popularity', codes_path('criteria' => 'sort_by_popularity') %>
  -->
 
-<%= form_for @search, :url => codes_path, :html => {:method => :get} do |f| %>
-	<%= f.label :language_contains %>
-	<%= f.text_field :language_contains, { :id => "search-by-language" } %>
-	<%= f.submit %>
-<% end %>
+
 
 	<% @codes.each do |c| %>
 
@@ -24,6 +20,9 @@
 			<%= "#{c.user.email}" %>
 		<% end %>
 		</p>
+		<div class="code-meta">
+		<%= "#{c.created_at}" %>  // <a href="#"><strong><%= "#{c.language}" %></strong></a>
+		</div>
 		<div class="code-content">
 			<div class="code-voting">
 				<%= button_to "Up", code_vote_up_path(:code_id => c.id), { :class => "button-up" } %>

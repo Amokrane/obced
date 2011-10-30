@@ -1,16 +1,24 @@
-<%= link_to 'Sort by date', users_path('criteria' => 'sort_by_date') %> <br/>
-<%= link_to 'Sort by score', users_path('criteria' => 'sort_by_score') %> <br/>
-<br/>
+<h1 class="page-title">Users</h1>
 
-<h1> Search a user </h1>
+
+
 <%= form_for @search, :url => users_path, :html => {:method => :get} do |f| %>
 	<%= f.label :nickname_contains %>
 	<%= f.text_field :nickname_contains, { :id => "search-by-nickname" } %>
 	<%= f.submit %>
 <% end %>
-<br/> <br/>
 
-<h1> List of users </h1>
+
+<div class="user-filters">
+<%= link_to 'Sort by date', users_path('criteria' => 'sort_by_date') %> 
+<%= link_to 'Sort by score', users_path('criteria' => 'sort_by_score') %> 
+</div>
+
+
+<ul class="user-list">
 <% @users.each do |u| %>
-	<%= link_to u.nickname, user_path(u) %> <br/>
+	<li>
+	<img src="../images/avatar.jpg" /><h4><%= link_to u.nickname, user_path(u) %></h4><span class="list-score"><%= u.score %></span> <div class="user-tags"><a href="#">Ruby</a> <a href="#">Java</a> <a href="#">C#</a></div>
+	</li>
 <% end %>
+</ul>
