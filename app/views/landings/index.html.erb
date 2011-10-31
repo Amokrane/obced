@@ -28,198 +28,121 @@ background:none;
 
 <% @code = @selected_codes.first %>
 
-<div class="container-home"> 
+<div class="container-home">
+
 	<% if !@code.nil? %>
 		<div id="codeoftheday">			
 			<h1> The code of the day is </h1>
 
-		
 			<div id="code-header">
-	    		<h2> <%= @code.title %> </h2>
-	    		<h3> Uploaded by: <%= link_to "#{@code.user.nickname}", user_path(@code.user) %> </h3>
-	  		</div>
-                                
-      		<div class="code-box">
-    			<div class="code-box-content">
-    				<pre>
-    					<!-- <code> -->
-                       		<%= markdown(@code.content) %>
-						<!-- </code> -->
+				<h2> <%= @code.title %> </h2>
+				<h3> Uploaded by: <%= link_to "#{@code.user.nickname}", user_path(@code.user) %> </h3>
+			</div>
+
+			<div class="code-box">
+				<div class="code-box-content">
+					<pre>
+					<!-- <code> -->
+					<%= markdown(@code.content) %>
+					<!-- </code> -->
 					</pre>
 
-      				<%= link_to 'Read more about this code now!', code_path(@code) %>
- 	     		</div> 
- 	     	</div>
- 	    </div>       
+		<%= link_to 'Read more about this code now!', code_path(@code) %>
+				</div> 
+			</div>
+		</div>       
+<% else %>
 
-     <% else %>
-      <!-- Ghislaine: Display something like: no code here yet. This could be yours! -->
-      <div id="codeoftheday">			
-			<h1> No code today!</h1>     
-			
-			<div id="code-header">
-	    		
-	  		</div>
-	  		       
-      		<div class="code-box">
-      			<div class="code-box-content">
-      				<div id="no-code">
-	      			<h2>This Space could be yours</h2>
-    				</div>
-      				<%= link_to 'Post a code', new_code_path %> 
- 	     		</div>
- 	    	</div>
- 	    </div>       
-      <% end %>
+<!-- Ghislaine: Display something like: no code here yet. This could be yours! -->
+
+	<div id="codeoftheday">			
+		<h1> No code today!</h1>     
+		<div id="code-header">
+		</div>
+		<div class="code-box">
+			<div class="code-box-content">
+				<div id="no-code">
+					<h2>This Space could be yours</h2>
+				</div>
+
+	<%= link_to 'Post a code', new_code_path %> 
+			</div>
+		</div>
+	</div>       
+	<% end %>
 </div>
-                   
+
 <% if !current_user %>
-	<!-- codeoftheday -->
-	<div class="clear"></div>
-			<h2 class="howitworks">How it works</h2>
-		<!-- middle -->
+<h2 class="howitworks">How it works</h2>
 
-		   <div class="middle-home">
-		   		<div id="topslider" class="tabs-bottom">
-	    		<ul>
-					<li class="first"><a href="#fragment-1" ><span> 1</span></a></li>
-		    		<li><a href="#fragment-2" ><span> 2</span></a></li>
-		    		<li><a href="#fragment-3" ><span>3</span></a></li>
-		    		<li><a href="#fragment-4" ><span> 4</span></a></li>
-				</ul>
-		    	<div id="fragment-1">
-		          	<div class="left-text" id="text-1">
-		    			<div class="slide-title">
-		    				You are a very talented developer and you just wrote a very beautiful code
-		    				<img src="images/flick.gif" /> 
-						</div>
+
+<!-- middle -->
+	<div class="middle-home">
+		<div id="topslider" class="tabs-bottom">
+			<ul>
+				<li class="first"><a href="#fragment-1" ><span> 1</span></a></li>
+		    	<li><a href="#fragment-2" ><span> 2</span></a></li>
+		    	<li><a href="#fragment-3" ><span>3</span></a></li>
+		    	<li><a href="#fragment-4" ><span> 4</span></a></li>
+			</ul>
+
+			<div id="fragment-1">
+				 <div class="left-text" id="text-1">
+		    		<div class="slide-title">
+		    			You are a very talented developer and you just wrote a very beautiful code <img src="images/flick.gif" /> 
 					</div>
+				</div>
+				<div class="right-text">
+				<img src="images/img-3.png" width="660" height="384" alt="" /> 
+				</div>
+			</div>
+		</div>
 
-					<div class="right-text"> <img src="images/img-3.png" width="660" height="384" alt="" /> 
-					</div>
+		<!-- content -->
 
-		            <div class="clear">
+		<div class="content">
+			
+			<h2>Have some free time, during lunch for instance? </h2>
+			<p>Browse all the codes that have been pushed to the web site and give them a shout!</p>
+			<a href="#" >Browse the Codes</a>
+		
+		
+			<div class="recent-list">
+		    	<% if !@recent_codes.empty? %>
+		        <h4>Recent Codes</h4>
+		        	<% @recent_codes.first(4).each do |c| %>
+		        	<div class="recent-items">
+		            		<h5><a href="#"> <%= c.title %> </a></h5></br>
+		            		<a href="#"><%= c.user.nickname %></a>
+		            		<p><%= truncate(c.description, :length => 140) %></p>
 		            </div>
-		        </div>
+		        	<% end %>
 
-		    	<div id="fragment-2">
-		            <div class="left-text" id="text-2">
-		            	<div class="slide-title">
-		            			You share it<img src="images/flick.gif" />
-		    			</div>
-		      		</div>
-		            
-		            <div class="right-text"> <img src="images/img-2.png" width="660" height="384" alt="" /> 
-		            </div>
-
-		            <div class="clear">
-		            </div>
-
-		        </div>
-
-		    	<div id="fragment-3">
-		            <div class="left-text" id="text-3">
-		            	<div class="slide-title">
-		            		Other talented developers browse the codes that have been shared by you 
-		            		and your peers and decide on which code is beautiful by voting on them.
-		            		<img src="images/flick.gif" /></div>
-		          		</div>
-
-		      		<div class="right-text"> <img src="images/img-4.png" width="660" height="384" alt="" /> 
-		      		</div>
-
-		      		<div class="clear">
-		      		</div>	
-		        </div>
-
-
-		    	<div id="fragment-4">
-		    		<div class="left-text"  id="text-4">
-		            	<div class="slide-title">
-		            		If it is your code that gets the most number of votes it will be featured 
-		            		on the homepage, and archived on the website forever!
-		            		<img src="images/flick.gif" />
-		        		</div>
-		      		</div>
-
-		          <div class="right-text"> 
-		          	<img src="images/img-3.png" width="660" height="384" alt="" /> 
-		          </div>
-
-		          <div class="clear"></div>
-		        </div>
-
-		    	<div class="clear"></div>
-		  		</div>
-		              
-		      	<!-- top-slider -->
-		      	<div class="clear"></div>
-		              
-		      	<!-- content -->
-		              
-		      
-		      		<div class="content">
-		      			<div class="feat-box" id="box-left">
-		      				<h2>Have some free time, during lunch for instance? </h2>
-		      				<div class="box-text">
-		                      <p>Browse all the codes that have been pushed to the web site and give them a shout!</p>
-		                      <a href="#" >Browse the Codes</a> 
-		                    </div>
-		    			<div class="clear">
-		    			</div>
-
-		    			<div class="home-list">
-		    				<% if !@recent_codes.empty? %>
-		        			<h4>Recent Codes</h4>
-		        			<ul class="recent">
-		        				<% @recent_codes.each do |c| %>
-	        						<li>
-		            					<h5> <a href="code-page.html"> <%= c.title %> </a></h5>
-		            					<a href="code-page.html"><%= c.user.nickname %></a>
-		            					<p> <%= c.description %> </p>
-		        					</li>
-		        			 	<% end %>
-		        			</ul>
-		        			<% else %>
-		        			<!-- Ghislaine: same here -->
-		        			<% end %>
-		        		</div>
-		      </div>
-		                 
-		       <div class="feat-box"
-		       id="box-right">
-		        <h2> Have some free time, during lunch for instance? </h2>
-		        <div class="box-text">
-		        	<p>Browse all the codes that have been pushed to the web site and give them a shout!</p>
-		        	<a href="#" >Browse the Codes</a> 
-		         </div>
-
-		        <div class="clear">
-		        </div>
-
-		        <div class="home-list">
-		        	<h4>Top Users</h4>
-		        	<ul class="top">
-		        		<% @recent_users.each do |u| %>
-		        			<li> 
-			            		<img src="images/small-avatar.png" />
-			            		<h5><a href="user-profile.html"><%= u.nickname %></a></h5>
-			            		<p> </p>
-			            		<span class="score"><%= u.score %></span>
-			            	</li>
-		        		<% end %>
-		        	</ul>
-		        </div>
-		      </div>   
+		        	<% else %>
+		        	<!-- Ghislaine: same here -->
+		        	<% end %>
 		    </div>
-	    <!--/ content --> 
-	  
 
-	  <div class="clear">
-	  </div>
+
+		    <div class="recent-list">
+		       <h4>Top Users</h4>
+		        		<% @recent_users.sort_by{|u| - u.score.to_i}.first(4).each do |u| %>
+		        		<div class="recent-items">
+			            		<img src="images/avatar.jpg" />
+			            		<h5><a href="user-profile.html"><%= u.nickname %></a></h5>
+			            		<span class="score"><%= u.score %></span>
+			         </div>   
+		        		<% end %>
+		        	
+		    </div>
+		</div><!-- content -->
 	</div>
 
-	<!--/ middle --> 
-	</div>
-	<br/>
+
+
+
+
+
+</div>
+
 <% end %>

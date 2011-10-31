@@ -421,111 +421,8 @@ body {
 	line-height:1.4em;
 	color:#656565;
 }
-.text-big {
-	font-size:17px;
-	line-height:24px;
-	font-weight:normal;
-}
-.feat-box {
-	margin-bottom:20px;
-	padding:0;
-	overflow:hidden;
-	float:left;
-	width:960px;
-	text-align:center;
-	-moz-border-radius: 6px;
-	-webkit-border-radius: 6px;
-	border-radius: 6px;
-}
-
-.feat-box  a{
-	font-weight:bold;
-	font-size:16px;
-	text-transform:uppercase;
-	
-}
-
-.home-list {
-	background:#FFF;
-	margin-top:20px;
-	-moz-border-radius: 6px;
-	-webkit-border-radius: 6px;
-	border-radius: 6px;
-	padding:20px;
-	text-align:left;
-	height:150px;
-}
-
-.home-list h4 {
-	margin-bottom:20px;
-}
-
-.home-list a {
-	text-transform:none;
-	font-size:14px;
-	font-weight:normal;
-}
-
-.home-list p {
-	margin:5px 0;
-	
-}
-
-.home-list img {
-	float:left;
-	margin-right:10px;
-	
-}
-
-.home-list ul li {
-	height:100px;
-	float:left;
-	width:214px;
-	margin-right:20px;
-	border-right:1px solid  #CEE1ED;
-
-	
-	
-}
-
-.home-list ul li.last {
-	margin-right:0;
-	border-right:none;
-	
-}
-
-.home-list h5 a {
-	font-weight:bold;
-}
-
-#box-right {
-	float:right;
-}
-
-#box-middle {
-	margin-left:15px;
-	padding:0;
-	width:290px;
-	background: none;
-}
 
 
-#box-middle a {
-	display:block;
-	margin-bottom:35px;
-	background: url('../images/shareacode.png') no-repeat center;
-	width:290px;
-	height:221px;
-	color:#FFF;
-	font-size:21px;
-	line-height:210px;
-	
-}
-
-.feat-box h2 {
-	font-family: 'Tienne', serif;
-	font-size:18px;
-}
 .box-text {
 }
 .box-text p {
@@ -1939,8 +1836,8 @@ form#user_search {
 	float:left;
 	margin-right:10px;
 	-moz-box-shadow: 1px 1px 3px #888;
--webkit-box-shadow: 1px 1px 3px #888;
-box-shadow: 1px 1px 3px #888;
+	-webkit-box-shadow: 1px 1px 3px #888;
+	box-shadow: 1px 1px 3px #888;
 }
 
 .user-list h4 {
@@ -1949,4 +1846,51 @@ box-shadow: 1px 1px 3px #888;
 	line-height:48px;
 	font-size:14px;
 	font-weight:bold;
+}
+
+
+.recent-list {
+	background:#FFF;
+	padding:20px;
+	margin-bottom:20px;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+}
+
+.recent-list h4 {
+	margin-bottom:20px;
+	font-weight:bold;
+	text-transform:uppercase;
+	font-size:14px;
+}
+
+.recent-items {
+	display:inline-block;
+	width:226px;
+	vertical-align:top;
+}
+
+.recent-items p {
+	padding-right:20px;
+	
+}
+
+.recent-items h5 a {
+	font-size:14px;
+	font-weight:bold;
+}
+
+.recent-items span.score {
+	float:right;
+	margin-right:10px;
+}
+
+.recent-items h5 {
+	display:inline-block;
+}
+
+.recent-items img {
+	float:left;
+	margin-right:10px;
 }
