@@ -660,11 +660,11 @@ a#browse-link {
 .footer a:hover {
 }
 .footer h3 {
-	font-family: 'Tienne', serif;
-	font-size:20px;
+	font-size:14px;
+	text-transform:uppercase;
+	font-weight:bold;
 	margin-bottom:10px;
 	color:#fff;
-	border-bottom:1px solid #363a3b;
 	padding-bottom:10px
 }
 .footer ul {
@@ -689,9 +689,9 @@ a#browse-link {
 }
 .copyright {
 	color:#FFF;
-	padding:10px 50px 10px 0;
+	padding:0 50px 10px 0;
 	height:50px;
-	margin:10px 0 0 0;
+	margin:0 0 0 0;
 	line-height:1.5em
 }
 .copyright p {
@@ -1807,17 +1807,21 @@ a#code {
 
 
 form#user_new {
-	background:#333;
-	padding:20px 140px;
+	background:#ECF0F4;
+	padding:20px 50px;
 	width:230px;
 	margin:0 auto;
+	border:1px solid #C7D1DB;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
 }
 
 form#user_new label {
 	text-transform:uppercase;
-	background:#CCC;
 	display:block;
-	padding:5px 10px;
+	padding:5px 0;
+	font-weight:bold;
 	
 }
 
@@ -1829,18 +1833,32 @@ form#user_new label#checkbox-label {
 }
 
 form#user_new input#user_email, form#user_new input#user_password, form#user_new input#user_password_confirmation, form#user_new input#user_nickname  {
-	background:#FFF;
-	border:none;
+	
 	width:210px;
 	padding:10px;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	background:#FFF url('../images/form-shadow.png') repeat-x top;
+	border:1px solid #92A1B0;
 	
 }
 
 form#user_new input#user_submit {
-	background:#FFF;
+	background:#339FD0;
+	color:#FFF;
+	font-weight:bold;
+	text-transform:uppercase;
 	border:none;
 	width:230px;
+	padding:5px 0;
 	cursor:pointer;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+	border:1px solid #92A1B0;
+	margin-top:20px;
+	font-size:19px;
 
 }
 
@@ -1883,13 +1901,22 @@ ul.user-list li {
 span.list-score {
 	display:block;
 	float:right;
-	line-height:48px;
-	width:40px;
+	line-height:35px;
+	width:50px;
 	padding:0 10px;
-
 	font-weight:bold;
 	font-size:16px;
+	text-align:right;
+	color:#FFF;
+	letter-spacing:2px;
+	background:#1B2539;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;
+	margin:0 0 0 0;
 }
+
+
 
 form#user_search {
 	float:left;
