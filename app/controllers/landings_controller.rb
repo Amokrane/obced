@@ -3,5 +3,6 @@ class LandingsController < ApplicationController
 		@selected_codes = Code.where(:code_state_id => CodeState::SELECTED)
 		@recent_codes = Code.recent
 		@recent_users = User.recent
+		@top_users = User.best
 	end
 end

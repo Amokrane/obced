@@ -56,15 +56,13 @@ background:none;
 <!-- Ghislaine: Display something like: no code here yet. This could be yours! -->
 
 	<div id="codeoftheday">			
-		<h1> No code today!</h1>     
+		<h1>No code today!</h1>     
 		<div id="code-header">
 		</div>
 		<div class="code-box">
-			<div class="code-box-content">
-				<div id="no-code">
+			<div class="code-box-content no-code">
 					<h2>This Space could be yours</h2>
-				</div>
-
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
 	<%= link_to 'Post a code', new_code_path %> 
 			</div>
 		</div>
@@ -103,8 +101,8 @@ background:none;
 		<div class="content">
 			
 			<h2>Have some free time, during lunch for instance? </h2>
-			<p>Browse all the codes that have been pushed to the web site and give them a shout!</p>
-			<a href="#" >Browse the Codes</a>
+			<h3>Browse all the codes that have been pushed to the web site and give them a shout!</h3>
+			<a id="browse-link" href="#" >Browse the Codes</a>
 		
 		
 			<div class="recent-list">
@@ -126,7 +124,7 @@ background:none;
 
 		    <div class="recent-list">
 		       <h4>Top Users</h4>
-		        		<% @recent_users.sort_by{|u| - u.score.to_i}.first(4).each do |u| %>
+		        		<% @top_users.first(4).each do |u| %>
 		        		<div class="recent-items">
 			            		<img src="images/avatar.jpg" />
 			            		<h5><a href="user-profile.html"><%= u.nickname %></a></h5>
