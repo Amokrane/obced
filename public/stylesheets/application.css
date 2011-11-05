@@ -1791,22 +1791,9 @@ a#code {
 	line-height:22px;
 }
 
-.profile-box {
-	background:#ccc;
-	width:240px;
-	padding:20px;
-	float:left;
-	
-}
-
-.user-codes {
-	float:right;
-	background:#444;
-	width:600px;
-}
 
 
-form#user_new {
+form#user_new, form#user_edit {
 	background:#ECF0F4;
 	padding:20px 50px;
 	width:230px;
@@ -1817,7 +1804,7 @@ form#user_new {
 	border-radius: 6px;
 }
 
-form#user_new label {
+form#user_new label, form#user_edit label {
 	text-transform:uppercase;
 	display:block;
 	padding:5px 0;
@@ -1832,7 +1819,7 @@ form#user_new label#checkbox-label {
 	
 }
 
-form#user_new input#user_email, form#user_new input#user_password, form#user_new input#user_password_confirmation, form#user_new input#user_nickname  {
+form#user_new input#user_email, form#user_new input#user_password, form#user_new input#user_password_confirmation, form#user_new input#user_nickname, form#user_edit input, form#user_edit textarea  {
 	
 	width:210px;
 	padding:10px;
@@ -1844,7 +1831,7 @@ form#user_new input#user_email, form#user_new input#user_password, form#user_new
 	
 }
 
-form#user_new input#user_submit {
+form#user_new input#user_submit, form#user_edit input#user_submit {
 	background:#339FD0;
 	color:#FFF;
 	font-weight:bold;
@@ -1983,4 +1970,89 @@ form#user_search {
 .recent-items img {
 	float:left;
 	margin-right:10px;
+}
+
+.profile-box-vote {
+}
+
+.profile-box-vote input {
+	background:#444;
+	border:none;
+}
+
+.profile-box {
+	width:600px;
+	padding:20px;
+	float:left;
+	background:#ECF0F4;
+	border:1px solid #C7D1DB;
+	-moz-border-radius: 6px;
+	-webkit-border-radius: 6px;
+	border-radius: 6px;	
+}
+
+.profile-box h2 {
+	margin-bottom:20px;
+	font-size:28px;
+
+}
+
+.user-codes {
+	float:right;
+	width:240px;
+}
+
+.user-codes ul{
+	margin-top:20px;	
+}
+
+.user-codes ul li{
+	margin-bottom:20px;
+
+}
+
+
+.user-codes h3 {
+	font-weight:bold;
+	text-transform:uppercase;
+	font-size:14px;
+}
+
+.user-photo {
+	height:100px;
+	width:100px;
+	background:#FFF;
+	float:left;
+	-moz-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+	-webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+	box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
+
+.profile-box-details {
+	margin-left:120px;
+	height:100px;
+}
+
+.profile-box-details a {
+	display:block;
+
+	
+}
+
+.profile-box-details p {
+	margin:10px 0 0 0;
+	
+}
+
+.profile-box-score  {
+
+text-align:right;
+margin:10px 0;
+width:100px;
+}
+
+.profile-box-score p {
+	font-size:28px;
+	margin:0;
+	font-weight:bold;
 }

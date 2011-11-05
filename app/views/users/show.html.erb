@@ -1,13 +1,25 @@
 <h1 class="page-title">Profile</h1>
 
 <div class="profile-box">
-	<p> Profile page for: <%= @user.nickname %> </p>
-	<p>Score=<%= @user.score %></p>
-	<p> <%= @user.email %> </p>
-	<p> <%= @user.website %> </p>
-	<p> <%= @user.biography %> </p>
 
-	<div id="profile-box-vote">
+	<h2><strong><%= @user.nickname %></strong></h2>
+	<div class="user-photo">
+	photo
+</div>
+
+	
+
+	<div class="profile-box-details">
+	<a href="#"> <%= @user.email %> </a>
+	<a href="#"> <%= @user.website %> </a>
+	<p> <%= @user.biography %> </p>
+	</div>
+	
+	<div class="profile-box-score">
+	<p><%= @user.score %></p>
+	</div>
+
+	<div class="profile-box-vote">
 		<%= button_to "Up", user_vote_up_path(:user_id => @user.id) %>
 	</div>
 
@@ -18,8 +30,10 @@
 	<% end %>
 </div>
 
+
+
 <div class="user-codes">
-	<h3> This user posted the following codes: </h3>
+	<h3><%= @user.nickname %>'s posted codes: </h3>
 	<ul>
 	<% @user.codes.each do |c| %>
 		<li><%= c.title %></li>
@@ -27,4 +41,5 @@
 	</ul>
 </div>
 
+<div class="clear"></div>
 
