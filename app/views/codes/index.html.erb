@@ -17,7 +17,7 @@
 		<h2><%= link_to "#{c.title}", code_path(c), :id => 'code' %></h2>
 		<p class="author">
 		<% if !c.user.nil? %>
-			<%= "#{c.user.email}" %>
+			<%= "#{c.user.nickname}" %>
 		<% end %>
 		</p>
 		<div class="code-meta">
@@ -26,7 +26,7 @@
 		<div class="code-content">
 			<div class="code-voting">
 				<%= button_to "Up", code_vote_up_path(:code_id => c.id), { :class => "button-up" } %>
-				<span class="voting-score"><%= "Score=#{c.score}" %></span>
+				<span class="voting-score"><%= "#{c.score}" %></span>
 				<%= button_to "Down", code_vote_down_path(:code_id => c.id), { :class => "button-down" } %>	
 			</div>
 			<div class="code-post-box"> 

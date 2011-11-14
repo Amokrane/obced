@@ -8,6 +8,6 @@
 
 	<h3> Tags </h3>	
 	<% Tag.all.each do |tag| %>
-		<p> <%= link_to tag.name, codes_path , { :class => "tags" } %> </p>
+		 <div class="tags"><%= link_to tag.name, codes_path %> <span class="closed">close</span></div>
 	<% end %>
 </div>
