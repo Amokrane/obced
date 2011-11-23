@@ -2,11 +2,9 @@
 	<div id="toolbar">
 		<div id="toolbar-content">
 			<div id="user-bar">
-				<p>
-					<!-- TODO GHISLAINE: remove the &nbsp; and put a padding somewhere -->
-					<strong> Welcome </strong> &nbsp;
-					<%= link_to current_user.nickname, user_path(current_user) %>
-				</p>
+				
+				<p>Logged in as</p> <%= link_to current_user.nickname, user_path(current_user), :id => 'user-nickname' %><%= link_to current_user.score, user_path(current_user), :id => 'user-score' %>
+				
 				<%= link_to "Log Out", destroy_user_session_path, :id => 'logout' %> 
 			</div>
 		</div>

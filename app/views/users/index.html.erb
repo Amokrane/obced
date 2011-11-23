@@ -1,7 +1,7 @@
 <h1 class="page-title">Users</h1>
 
 
-
+<div id="user-top-bar">
 <%= form_for @search, :url => users_path, :html => {:method => :get} do |f| %>
 	<%= f.label :nickname_contains %>
 	<%= f.text_field :nickname_contains, { :id => "search-by-nickname" } %>
@@ -14,6 +14,7 @@
 <%= link_to 'Sort by score', users_path('criteria' => 'sort_by_score') %> 
 </div>
 
+</div>
 
 <ul class="user-list">
 <% @users.each do |u| %>

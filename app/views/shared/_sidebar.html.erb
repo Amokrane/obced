@@ -1,10 +1,14 @@
 <div class="sidebar">
 
+<h3> Search </h3>	
+
 <%= form_for @search, :url => codes_path, :html => {:method => :get} do |f| %>
 	<%= f.label :language_contains %>
 	<%= f.text_field :language_contains, { :id => "search-by-language" } %>
 	<%= f.submit %>
 <% end %>
+
+<div class="tip-box">Optimize your search sit amet, consectetur adipiscing elit. Morbi sagittis metus sed quam venenatis luctus.</div>
 
 	<h3> Tags </h3>	
 	<% Tag.all.each do |tag| %>
