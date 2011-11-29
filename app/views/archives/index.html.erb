@@ -1,6 +1,7 @@
 <% @archives.each do |archive| %>
-	<%= "#{archive.title}, by #{archive.user.nickname}" %> <br/>
-	<%= sanitize Kramdown::Document.new(archive.content).to_html %> <br/>
-	<%= "#{archive.score} points" %> <br/>
-	<%= archive.created_at %> <br/> <br/> <br/>
+	<%= archive.created_at %>
+	<%= ": #{archive.title} (#{archive.score} points)" %> <br/>
+	<%= "by #{archive.user.nickname}" %> <br/>
+	<%=  "Description: #{archive.description}" %> <br/>
+	 <br/> <br/> 
 <% end %>
