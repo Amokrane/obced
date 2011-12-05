@@ -26,7 +26,6 @@ p.alert {
 }
 
 .footer .container {
-background:none;
 }	
 </style>
 
@@ -91,31 +90,71 @@ background:none;
 			<div id="fragment-1">
 				 <div class="left-text" id="text-1">
 		    		<div class="slide-title">
-		    			You are a very talented developer and you just wrote a very beautiful code <img src="images/flick.gif" /> 
+		    		<div class="step">1</div>
+		    			<p>You are a very talented developer and you just wrote a very beautiful code</p>
 					</div>
 				</div>
 				<div class="right-text">
-				<img src="images/img-3.png" width="660" height="384" alt="" /> 
+				<p style="text-align:center;">image</p>
 				</div>
 			</div>
+			
+			
+			<div id="fragment-2">
+				<div class="left-text" id="text-1">
+		    		<div class="slide-title">
+		    		<div class="step">1</div>
+		    			<p>You share it</p>
+					</div>
+				</div>
+				<div class="right-text">
+				<p style="text-align:center;">image</p>
+				</div>
+			</div>
+			
+			<div id="fragment-3">
+				<div class="left-text" id="text-1">
+		    		<div class="slide-title">
+		    		<div class="step">1</div>
+		    			<p>Other talented developers browse the codes that have been shared by you and your peers and decide on which code is beautiful by voting on them.</p>
+					</div>
+				</div>
+				<div class="right-text">
+				<p style="text-align:center;">image</p>
+				</div>
+			</div>
+			
+			<div id="fragment-4">
+				<div class="left-text" id="text-1">
+		    		<div class="slide-title">
+		    		<div class="step">1</div>
+		    			<p>If it is your code that get the most number of votes it will be featured on the homepage, and archived on the website forever!</p>
+					</div>
+				</div>
+				<div class="right-text">
+				<p style="text-align:center;">image</p>
+				</div>
+			</div>
+			
 		</div>
 
 		<!-- content -->
 
 		<div class="content">
 			
+			<div id="promo-box">
 			<h2>Have some free time, during lunch for instance? </h2>
 			<h3>Browse all the codes that have been pushed to the web site and give them a shout!</h3>
 			<a id="browse-link" href="#" >Browse the Codes</a>
-		
+			</div>
 		
 			<div class="recent-list">
 		    	<% if !@recent_codes.empty? %>
 		        <h4>Recent Codes</h4>
 		        	<% @recent_codes.first(4).each do |c| %>
 		        	<div class="recent-items">
-		            		<h5><a href="#"> <%= c.title %> </a></h5></br>
-		            		<a href="#"><%= c.user.nickname %></a>
+		            		<h5><a href="#"> <%= c.title %> </a></h5>
+		            		<p><%= c.user.nickname %></p>
 		            		<p><%= truncate(c.description, :length => 140) %></p>
 		            </div>
 		        	<% end %>

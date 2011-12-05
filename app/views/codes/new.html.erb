@@ -18,7 +18,9 @@
 
 <h1 class="page-title">Post a Code</h1>
 
+<div id="post-code-top">
 <%= link_to "Share one of my Gists instead", import_gist_codes_path, :id => "share-gists" %>
+</div>
 
 <%= form_for(@code) do |f| %>
 	<%= f.label :title%> 
@@ -42,6 +44,9 @@
 	<div id ="tag-preview" style="display: block;">
 	</div>
 
+
 	<%= f.submit "Submit This Shiny Beautiful Code" %>
 
 <% end %>
+<div id="post-code-bottom">
+</div>

@@ -6,19 +6,19 @@
 
 <h1 class="page-title"><%= @code.title %></h1>
 
-<h2>By <a href="#"><%= @code.user.nickname %></a></h2>
+<div id="post-header">
+<h2><span>by</span> <a href="#"><%= @code.user.nickname %></a></h2>
 
-<div class="code-meta">
-Friday, April 2, 2010 // <a href="#"><strong> <%= @code.language %> </strong></a>
+<div class="code-meta">Friday, April 2, 2010 // <a href="#"><strong> <%= @code.language %> </strong></a></div>
 </div>
 
 <div class="code-post">
     <div class="code-content">
         
         <div class="code-voting">
-        <%= button_to "", code_vote_up_path(:code_id => @code.id), :html => {:class => ""} %>
-        <span class="voting-score"><%= @code.score %></span>
-        <%= button_to "", code_vote_down_path(:code_id => @code.id), :html => {:class => ""} %>
+        <%= button_to "", code_vote_up_path(:code_id => @code.id), :html => {:class => ""} , :class => "button-up"%>
+        <div class="voting-score"><%= @code.score %></div>
+        <%= button_to "", code_vote_down_path(:code_id => @code.id), :html => {:class => ""} , :class => "button-down" %>
         </div>
 
         <div class="code-post-box">
@@ -68,10 +68,10 @@ Friday, April 2, 2010 // <a href="#"><strong> <%= @code.language %> </strong></a
 <!-- comment form -->           
 <div class="comment-form" id="addcomment">
 
-<h2>Add Comment:</h2>
+<h2>Add Comment</h2>
 <%= form_for([@code, @code.comments.build]) do |f| %>
-    <p class="textarea"> <%= f.text_area :content, :html => {:cols => "40", :rows => "10"} %> </p>
-    <p class="btn-send"> <%= f.submit "Send Message" %> </p>
+    <%= f.text_area :content, :html => {:cols => "40", :rows => "10"} %> 
+   <%= f.submit "Send Message" %>
 <% end %>
 
 
