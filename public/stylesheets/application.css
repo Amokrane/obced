@@ -2131,9 +2131,8 @@ position: absolute;
 }
 
 .profile-box-left {
-width: 100px;
-float: left;
-
+	width: 200px;
+	float: left;
 }
 
 
