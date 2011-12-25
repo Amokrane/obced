@@ -15,8 +15,7 @@ class User < ActiveRecord::Base
   has_many :authentications
   
   # Callbacks
-  after_initialize :init_score
-  before_save :init_nickname
+  before_save :init_nickname, :init_score
   after_create :send_welcome_email
 
   # Scopes
@@ -36,10 +35,12 @@ class User < ActiveRecord::Base
 
   private
   def init_score
-  	score ||= 0
+    puts "Initialize score"
+	  self.score ||= 1
   end
 
   def init_nickname
+    puts "Initilize nickname"
     m = /^(.+)\@/.match self.email
     nickname ||= m[1]
   end
