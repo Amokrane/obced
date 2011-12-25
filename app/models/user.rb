@@ -4,6 +4,9 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  # Avatar attributes -- Managed bu Paperclip
+  has_attached_file :avatar, :styles =>  { :medium => "300x300>", :thumb => "100x100>" }
+  
   # Setup accessible (or protected) attributes for your model
   attr_accessible :nickname, :email, :password, :password_confirmation, :remember_me, :website, :biography, :score
 
@@ -15,7 +18,7 @@ class User < ActiveRecord::Base
   has_many :authentications
   
   # Callbacks
-  before_save :init_nickname, :init_score
+  before_save :init_score
   after_create :send_welcome_email
 
   # Scopes
@@ -37,12 +40,6 @@ class User < ActiveRecord::Base
   def init_score
     puts "Initialize score"
 	  self.score ||= 1
-  end
-
-  def init_nickname
-    puts "Initilize nickname"
-    m = /^(.+)\@/.match self.email
-    nickname ||= m[1]
   end
 
   def send_welcome_email

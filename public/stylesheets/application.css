@@ -2046,7 +2046,7 @@ position: absolute;
 }
 
 .profile-box {
-	padding:20px 300px 20px 20px;
+	padding:40px 300px 20px 20px;
 	background:#ECF0F4;
 	border:1px solid #92A1B0;
 	-moz-border-radius: 6px;
@@ -2117,15 +2117,16 @@ position: absolute;
 }
 
 .profile-box-score  {
-	text-align:right;
-	margin: 0;
+	text-align:left;
+	margin-top: 70px;
+	margin-left: -55px;
 	width:100px;
 	float:left;
 }
 
 .profile-box-score p {
 	font-size:28px;
-	margin:0;
+	margin:0px;
 	font-weight:bold;
 }
 
@@ -2245,6 +2246,8 @@ width: 70px;
 display: block;
 clear: both;
 margin-top: 40px;
+margin-right:10px;
+text-align:right;
 }
 
 #promo-box {

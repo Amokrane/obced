@@ -1,47 +1,58 @@
-<h1 class="page-title">User Profile</h1>
+<h1 class="page-title"><strong><%= @user.nickname %></strong></h1>
+<% if !current_user.nil? %>
+		<% if current_user.email == @user.email %>
+			<%= link_to 'edit', edit_user_registration_path(@user), :id => 'edit-profile' %>
+		<% end %>
+<% end %>
 
 <div class="profile-box">
-	
-	<h2><strong><%= @user.nickname %></strong></h2>
 	<div class="profile-box-left">
-	<div class="user-photo">
-	photo
+		<div class="user-photo">
+			photo
+		</div>
 	</div>
-	<div class="profile-box-score">
-	<p><%= @user.score %></p>
-	</div>
-	</div>
-
-
-	
 
 	<div class="profile-box-details">
-	<div class="user-info"><h4>Email</h4> <%= @user.email %> </div>
-	<div class="user-info"><h4>Website</h4> <%= @user.website %> </div>
-	<p> <%= @user.biography %> </p>
+		<div class="user-info">
+			<h4>Email</h4> <%= @user.email %> 
+		</div>
+		
+		<div class="user-info">
+			<h4>Website</h4>  <%= @user.website %> 
+		</div>
+		
+		<div class="user-info">
+			<h4>Biography</h4>  <%= sanitize Kramdown::Document.new(@user.biography).to_html %>
+		</div>
 	</div>
 	
-	
+	<div class="profile-box-score"> 
+		<p> <%= @user.score %> </p>
+	</div>
 
-	
 
-	<% if !current_user.nil? %>
-		<% if current_user.email == @user.email %>
-			<%= link_to 'Edit Profile', edit_user_registration_path(@user), :id => 'edit-profile' %>
-		<% end %>
+	<% if current_user.email != @user.email %>
+		<div class="profile-box-vote">
+			<h3>Vote for this user</h3>
+			<p>A bloc that explains why we should vote for this user</p>
+			<%= button_to "Up", user_vote_up_path(:user_id => @user.id) %>
+		</div>
 	<% end %>
-	
-	<div class="profile-box-vote">
-	<h3>Vote for this user</h3>
-	<p>A bloc that explains why we should vote for this user</p>
-		<%= button_to "Up", user_vote_up_path(:user_id => @user.id) %>
-	</div>
 </div>
 
-
-
 <div class="user-codes">
-	<h3><%= @user.nickname %>'s posted codes: </h3>
+	<% if current_user.email == @user.email %>
+		<h3> You have posted  
+	<% else %>
+		<h3><%= @user.nickname %> has posted 
+	<% end %>
+		<% if @user.codes.size == 0 %>
+			<font color="red"> <%= @user.codes.size %> </font> codes.
+		<% else %>
+			<font color="green"> <%= @user.codes.size %> </font> codes.
+		<% end %>
+	</h3>
+
 	<ul>
 	<% @user.codes.each do |c| %>
 		<li><%= c.title %></li>
