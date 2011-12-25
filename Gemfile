@@ -16,7 +16,7 @@ gem 'daemons', '1.1.0'
 gem 'redcarpet'
 gem 'albino'
 gem 'nokogiri'
-gem 'paperclip'
+gem 'paperclip', :git => "http://github.com/thoughtbot/paperclip.git"
 
 group :test, :development do
 	gem 'rspec-rails', '~>2.3'

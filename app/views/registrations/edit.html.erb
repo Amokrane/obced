@@ -1,6 +1,6 @@
 <h1 class="page-title"><%= current_user.nickname %> </h1>
 
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, :multipart => true }) do |f| %>
   <%= devise_error_messages! %>
 
   <h2> Registration information </h2>
@@ -19,6 +19,9 @@
 
   <p><%= f.label :biography %> 
   <%= f.text_area  :biography %></p>
+  
+  <p><%= f.label :avatar %>
+  <%= f.file_field :avatar %>
   
   <p><%= f.submit "Update" %></p>
 <% end %>

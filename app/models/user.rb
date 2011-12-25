@@ -5,10 +5,10 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Avatar attributes -- Managed bu Paperclip
-  #has_attached_file :avatar, :styles =>  { :medium => "300x300>", :thumb => "100x100>" }
+  has_attached_file :avatar, :styles =>  { :medium => "120x120>", :thumb => "20x20>" }
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :nickname, :email, :password, :password_confirmation, :remember_me, :website, :biography, :score
+  attr_accessible :nickname, :email, :password, :password_confirmation, :remember_me, :website, :biography, :score, :avatar
 
   # Validations
   validates_presence_of :nickname

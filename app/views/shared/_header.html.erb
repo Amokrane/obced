@@ -2,7 +2,7 @@
 	<div id="toolbar">
 		<div id="toolbar-content">
 			<div id="user-bar">
-				
+				<%= image_tag(current_user.avatar.url(:thumb)) %>
 				<%= link_to current_user.nickname, user_path(current_user), :id => 'user-nickname' %>
 				<%= link_to current_user.score, user_path(current_user), :id => 'user-score' %>
 				

@@ -2046,7 +2046,7 @@ position: absolute;
 }
 
 .profile-box {
-	padding:40px 300px 20px 20px;
+	padding:40px 150px 20px 20px;
 	background:#ECF0F4;
 	border:1px solid #92A1B0;
 	-moz-border-radius: 6px;
@@ -2100,7 +2100,7 @@ position: absolute;
 }
 
 .profile-box-details {
-	margin-left:120px;
+	margin-left:200px;
 }
 
 .profile-box-details a {
@@ -2217,7 +2217,7 @@ padding: 0;
 
 #user-nickname {
 line-height: 30px;
-margin-right: 20px;
+margin-right: 10px;
 }
 
 #user-score{

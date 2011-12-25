@@ -8,7 +8,7 @@
 <div class="profile-box">
 	<div class="profile-box-left">
 		<div class="user-photo">
-			photo
+			<%= image_tag current_user.avatar.url(:medium) %>	
 		</div>
 	</div>
 
@@ -18,11 +18,19 @@
 		</div>
 		
 		<div class="user-info">
-			<h4>Website</h4>  <%= @user.website %> 
+			<h4>Location</h4>  <%= @user.location %> 
 		</div>
-		
+
 		<div class="user-info">
 			<h4>Biography</h4>  <%= sanitize Kramdown::Document.new(@user.biography).to_html %>
+		</div>
+
+		<div class="user-info">
+			<h4>Website</h4>  <%= @user.website %> 
+		</div>
+
+		<div class="user-info">
+			<h4>Member since</h4>  <%= distance_of_time_in_words(@user.created_at, Time.now) %> 
 		</div>
 	</div>
 	
