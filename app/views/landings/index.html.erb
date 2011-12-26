@@ -169,7 +169,7 @@ p.alert {
 		       <h4>Top Users</h4>
 		        		<% @top_users.first(4).each do |u| %>
 		        		<div class="recent-items">
-			            		<img src="images/avatar.jpg" />
+			            		<%= image_tag u.avatar.url(:medium) %>
 			            		<h5><a href="user-profile.html"><%= u.nickname %></a></h5>
 			            		<span class="score"><%= u.score %></span>
 			         </div>   
@@ -178,12 +178,5 @@ p.alert {
 		    </div>
 		</div><!-- content -->
 	</div>
-
-
-
-
-
-
 </div>
-
 <% end %>
