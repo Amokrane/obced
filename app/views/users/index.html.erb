@@ -19,7 +19,7 @@
 <ul class="user-list">
 <% @users.each do |u| %>
 	<li>
-	<img src="../images/avatar.jpg" /><h4><%= link_to u.nickname, user_path(u) %></h4><span class="list-score"><%= u.score %></span> <div class="user-tags"><a href="#">Ruby</a> <a href="#">Java</a> <a href="#">C#</a></div>
+	<%= image_tag u.avatar.url(:medium) %><h4><%= link_to u.nickname, user_path(u) %></h4><span class="list-score"><%= u.score %></span> <div class="user-tags"><a href="#">Ruby</a> <a href="#">Java</a> <a href="#">C#</a></div>
 	</li>
 <% end %>
 </ul>
