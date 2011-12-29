@@ -13,13 +13,19 @@ class CodesController < ApplicationController
 	end
 
 	def new
-		if params['gist_id']
-			@gist = Code.import_gist_by_id params['gist_id']
-			raise @gist.inspect
-			@code = Code.new(:user_id => current_user.id, :title => "")
-		else 
-			@code = Code.new(:user_id => current_user.id)
+		if !current_user.nil?
+			if params['gist_id']
+				@gist = Code.import_gist_by_id params['gist_id']
+				raise @gist.inspect
+				@code = Code.new(:user_id => current_user.id, :title => "")
+			else 
+				@code = Code.new(:user_id => current_user.id)
+			end
+		else
+			flash[:notice] = "You are not logged in. Please register or log in if you are already a member."
+			redirect_to :action => "new", :controller => "registrations"
 		end
+		
 	end
 
 	def create
@@ -31,7 +37,7 @@ class CodesController < ApplicationController
 			redirect_to @code
 		else
 			flash[:notice] = "Code has not been submitted."
-			redirect :action => "new"
+			redirect_to :action => "new"
 		end
 	end
 
