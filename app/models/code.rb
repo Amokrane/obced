@@ -51,7 +51,7 @@ class Code < ActiveRecord::Base
   end
 
   def initialize_state
-    #self.code_state = CodeState.find_by_name("Active")
+    self.code_state = CodeState.find_by_name("Active")
   end
 
 end

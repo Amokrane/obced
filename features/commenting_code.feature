@@ -13,7 +13,7 @@ Background:
 		| Hello World | Ruby 	 | puts Hello World | very simple hello world  | 1 		 | 0     |
 Scenario:
 	Given I am on the code page for "Hello World"
-	When I fill in "Comment" with "Good one!"
+	When I fill in "comment" with "Good one!"
 	And I press "Comment"
 	Then I should see "Your comment has been sent."
 	And I should see "Good one!"

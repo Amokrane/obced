@@ -7,16 +7,17 @@ module Jobs
 		#run_every 24.hours
 
 		def perform
-			abcs = ActiveRecord::Base.configurations
+          abcs = ActiveRecord::Base.configurations
       		ActiveRecord::Base.establish_connection(abcs[::Rails.env])
       		begin
       			active_codes = Code.where(:code_state_id => CodeState::ACTIVE)
-                        active_codes.each do |ac|
-                              if Time.now > ac.created_at + 3.days
-                                    ac.code_state = CodeState.find_by_name("Inactive")
-                                    ac.save
-                              end
-                        end
+            active_codes.each do |ac|
+              puts "#{Time.now} > #{ac.created_at + 3.days} ?"
+              if Time.now > ac.created_at + 3.days
+                    ac.code_state = CodeState.find_by_name("Inactive")
+                    ac.save
+              end
+            end
       		rescue => e
       			STDERR.puts "Error archiving the code: #{e}"
       		end

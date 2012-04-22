@@ -12,7 +12,7 @@ Background:
 
 Scenario: Create a new code
 	Given I am on the homepage
-	When I follow "New Code"
+	When I follow "Post a Code"
 	And I fill in "Title" with "My first beautiful code"
 	And I fill in "Content" with "puts Hello World"
 	And I select "Ruby" from "languages-select"

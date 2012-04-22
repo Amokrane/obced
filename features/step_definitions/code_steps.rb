@@ -15,3 +15,8 @@ Given /^I should see in this order:$/ do |table|
   actual_order = all('a.code').collect(&:text)
   actual_order.should == expected_order.flatten
 end
+
+Given /^the code "([^"]*)" should have a score of ([^"]*)$/ do |code, score|
+  code = Code.find_by_title(code)
+  code.score.to_s.should == score
+end

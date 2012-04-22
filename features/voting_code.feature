@@ -14,7 +14,7 @@ Background:
 		| Hello World | Ruby 	 | puts Hello World | very simple hello world | 1 		| 1     |
 Scenario: Voting up a code
 	Given I am on the codes page
-	Then I should see "1"
-	And I press "Up" 
-	Then I should see "Score=2"
-	And I should not see "Score=1"
+	And I press "up" 
+  Then the code "Hello World" should have a score of 2
+  And I press "up"
+  Then the code "Hello World" should have a score of 3

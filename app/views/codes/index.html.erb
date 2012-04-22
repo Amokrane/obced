@@ -1,46 +1,32 @@
 <h1 class="page-title">Active Codes</h1>
-
 <%= render 'shared/sidebar' %>
-
 <div class="content-col">
-
-<!-- # <%= link_to 'Sort by date', codes_path('criteria' => 'sort_by_date') %>
-# <%= link_to 'Sort by score', codes_path('criteria' => 'sort_by_score') %>
-# <%= link_to 'Sort by popularity', codes_path('criteria' => 'sort_by_popularity') %>
- -->
-
-
-
+	<!-- # <%= link_to 'Sort by date', codes_path('criteria' => 'sort_by_date') %>
+	# <%= link_to 'Sort by score', codes_path('criteria' => 'sort_by_score') %>
+	# <%= link_to 'Sort by popularity', codes_path('criteria' => 'sort_by_popularity') %>
+	 -->
 	<% @codes.each do |c| %>
-		
 		<div class="active-code">
-		
-		
-		<h2><%= link_to "#{c.title}", code_path(c), :id => 'code' %></h2>
+			<h2><%= link_to "#{c.title}", code_path(c), :id => 'code' %></h2>
 			<p class="author">
 				<% if !c.user.nil? %>
 					<%="Posted by #{c.user.nickname}" %>
 				<% end %>
 			</p>
-		
-		
-		<div class="code-description">
-			<%= "#{c.description}" %> 
+			
+			<div class="code-description">
+				<%= "#{c.description}" %> 
+			</div>
+			
+			<div class="code-meta">
+				<%= "#{c.created_at}" %>  // <a href="#"><strong><%= "#{c.language}" %></strong></a>
+			</div>
+			
+			<div class="active-code-voting">
+		  		<%= button_to "", code_vote_up_path(:code_id => c.id), {:id => "up", :class => "button-up"} %>
+		  		<div class="voting-score"><%= "#{c.score}" %></div>
+		  		<%= button_to "", code_vote_down_path(:code_id => c.id), {:id => "down", :class => "button-down"} %>	
+			</div>
 		</div>
-		
-		<div class="code-meta">
-			<%= "#{c.created_at}" %>  // <a href="#"><strong><%= "#{c.language}" %></strong></a>
-		</div>
-		
-		<div class="active-code-voting">
-			<%= button_to "Up", code_vote_up_path(:code_id => c.id), { :class => "button-up" } %>
-			<div class="voting-score"><%= "#{c.score}" %></div>
-			<%= button_to "Down", code_vote_down_path(:code_id => c.id), { :class => "button-down" } %>	
-		</div>
-
-		</div>
-		
-		
 	<% end %>
-
 </div>

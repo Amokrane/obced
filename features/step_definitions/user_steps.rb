@@ -14,7 +14,7 @@ end
 Given /^I am signed in as them$/ do
   steps(%Q{
   	Given I am on the homepage
-  	And I follow "Sign In"
+    And I follow "Sign in"
   	And I fill in "Email" with "#{@user.email}"
   	And I fill in "Password" with "#{@user.password}"
   	And I press "Sign in"

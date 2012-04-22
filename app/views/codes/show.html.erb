@@ -16,9 +16,9 @@
     <div class="code-content">
         
         <div class="code-voting">
-        <%= button_to "", code_vote_up_path(:code_id => @code.id), :html => {:class => ""} , :class => "button-up"%>
+          <%= button_to "", code_vote_up_path(:code_id => @code.id), :html => {:class => ""} , :id => "up", :class => "button-up" %>
         <div class="voting-score"><%= @code.score %></div>
-        <%= button_to "", code_vote_down_path(:code_id => @code.id), :html => {:class => ""} , :class => "button-down" %>
+        <%= button_to "", code_vote_down_path(:code_id => @code.id), :html => {:class => ""} , :id => "down", :class => "button-down" %>
         </div>
 
         <div class="code-post-box">
@@ -70,8 +70,8 @@
 
 <h2>Add Comment</h2>
 <%= form_for([@code, @code.comments.build]) do |f| %>
-    <%= f.text_area :content, :html => {:cols => "40", :rows => "10"} %> 
-   <%= f.submit "Send Message" %>
+  <%= f.text_area :content, :id => "comment", :html => {:cols => "40", :rows => "10"} %> 
+   <%= f.submit "Comment" %>
 <% end %>
 
 
@@ -80,4 +80,3 @@
 <!--/ comment form -->           
 
 </div>
-

@@ -11,7 +11,7 @@ Background:
 
 Scenario: Add tags when posting a new code
 	Given I am on the home page
-	When I follow "New Code"
+	When I follow "Post a Code"
 	And I fill in "Title" with "Hello World"
 	And I fill in "Content" with "puts Hello World"
 	And I fill in "Description" with "A simple and beautiful hello world"
