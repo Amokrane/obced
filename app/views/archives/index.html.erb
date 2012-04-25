@@ -1,13 +1,14 @@
 <h1 class="page-title">Archive</h1>
-<h2 class="archive-month">December</h1>
 
-<% @archives.each do |archive| %>
-<div class="archived-code">
-	<div class="date"><%= archive.created_at %></div>
-	<h3><%= "#{archive.title}" %> </h3>
-	
-	<div class="author"><%= "by #{archive.user.nickname}" %> </div>
-	<div class="score"><%= ":#{archive.score} points"%></div>
-	<div class="description"><%=  "Description: #{archive.description}" %> </div>
-</div>	
+<% @archives.each do |date, codes| %>
+  <h2 class="archive-month"><%= Date::MONTHNAMES[date] %> </h1>
+  <div class="archived-code">
+      <% codes.flatten.each do |code| %>
+        <div class="date"><%= code.created_at %></div>
+        <h3><%= "#{code.title}" %> </h3>
+        <div class="author"><%= "by #{code.user.nickname}" %> </div>
+        <div class="score"><%= ":#{code.score} points"%></div>
+        <div class="description"><%=  "Description: #{code.description}" %> </div>
+      <% end %> 
+  </div>	
 <% end %>

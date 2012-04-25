@@ -20,6 +20,11 @@ class Code < ActiveRecord::Base
   # Vérifier que la description est fournie ainsi que les titres et contenu
   validates_presence_of :title, :description, :content
   
+
+  def self.build_archive year
+    return Code.where(:code_state_id =>3).find_all { |c| c.created_at.year == year }.group_by { |c| c.created_at.month }
+  end
+
   def tag! tags
     tags = tags.split(" ").map do |tag|
         Tag.find_or_create_by_name(tag) 
@@ -53,5 +58,4 @@ class Code < ActiveRecord::Base
   def initialize_state
     self.code_state = CodeState.find_by_name("Active")
   end
-
 end
